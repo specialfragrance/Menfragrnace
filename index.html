@@ -1,96 +1,86 @@
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivory Clinic - Ժպիտ Ձեր Առողջության Համար</title>
+    <title>Maison Francis Kurkdjian | Luxury Fragrances</title>
+    <meta name="description" content="Discover the exquisite world of Maison Francis Kurkdjian - where French elegance meets olfactory artistry.">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --primary: #0ea5e9;
-            --primary-dark: #0284c7;
-            --secondary: #14b8a6;
-            --accent: #f59e0b;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --white: #ffffff;
-            --gradient: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E8C1;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --white: #ffffff;
+            --cream: #FAF8F3;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark-gray);
             overflow-x: hidden;
         }
 
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
         /* Navigation */
-        .navbar {
+        nav {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--black);
         }
 
-        .logo i {
-            font-size: 2rem;
+        .logo span {
+            color: var(--gold);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 40px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--dark-gray);
+            font-size: 13px;
             font-weight: 500;
-            transition: color 0.3s;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
+            transition: color 0.3s ease;
         }
 
         .nav-links a::after {
@@ -99,48 +89,29 @@
             bottom: -5px;
             left: 0;
             width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
-        .nav-cta {
-            background: var(--gradient);
-            color: var(--white) !important;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
-        }
-
-        .nav-cta::after {
-            display: none !important;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark);
-        }
-
         /* Hero Section */
         .hero {
-            margin-top: 80px;
-            min-height: 90vh;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26,26,26,0.8) 0%, rgba(10,10,10,0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1594035910387-fea47794f61f?w=1920') center/cover;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
             position: relative;
             overflow: hidden;
         }
@@ -148,709 +119,464 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .hero-content h1 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .btn-primary {
-            background: var(--gradient);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.4);
-        }
-
-        .btn-secondary {
-            background: var(--white);
-            color: var(--primary);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-            border: 2px solid var(--primary);
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: block;
-        }
-
-        .stat-label {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .hero-image {
-            position: relative;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-image img {
+            top: 0;
+            left: 0;
             width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(212,175,55,0.1)" stroke-width="1"/></svg>');
+            opacity: 0.3;
         }
 
-        .floating-card {
-            position: absolute;
-            background: var(--white);
-            padding: 1rem 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            animation: float 5s ease-in-out infinite;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+            animation: fadeInUp 1.5s ease;
         }
 
-        .floating-card.card-1 {
-            top: 10%;
-            left: -10%;
-            animation-delay: 0s;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .floating-card.card-2 {
-            bottom: 15%;
-            right: -5%;
-            animation-delay: 2s;
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
-        .floating-card i {
-            font-size: 2rem;
-            color: var(--secondary);
+        .hero h1 .highlight {
+            color: var(--gold);
+            font-style: italic;
         }
 
-        .floating-card-text strong {
-            display: block;
-            color: var(--dark);
+        .hero-subtitle {
+            font-size: 18px;
+            letter-spacing: 4px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            text-transform: uppercase;
         }
 
-        .floating-card-text span {
-            font-size: 0.85rem;
-            color: var(--gray);
+        .hero-text {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            font-weight: 300;
+            opacity: 0.9;
         }
 
-        /* Services Section */
-        .services {
-            padding: 6rem 0;
-            background: var(--white);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
+        .cta-button {
             display: inline-block;
-            background: rgba(14, 165, 233, 0.1);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            color: var(--gray);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--light);
-            padding: 2.5rem;
-            border-radius: 20px;
-            transition: all 0.3s;
+            padding: 18px 50px;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .service-card::before {
+        .cta-button::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
-            height: 5px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.3s;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.4s ease;
+            z-index: -1;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        .cta-button:hover {
+            color: var(--black);
         }
 
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            color: var(--white);
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .service-card p {
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-        .service-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            transition: gap 0.3s;
-        }
-
-        .service-link:hover {
-            gap: 1rem;
+        .cta-button:hover::before {
+            left: 0;
         }
 
         /* About Section */
         .about {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-        }
-
-        .about-grid {
+            padding: 120px 5%;
+            background: var(--white);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 80px;
             align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .about-images {
+        .about-image {
             position: relative;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            overflow: hidden;
+            box-shadow: 30px 30px 0px var(--gold-light);
         }
 
-        .about-images img {
+        .about-image img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .about-images img:first-child {
-            grid-row: span 2;
-            height: 100%;
+            height: 600px;
             object-fit: cover;
-        }
-
-        .experience-badge {
-            position: absolute;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--gradient);
-            color: var(--white);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(14, 165, 233, 0.3);
-        }
-
-        .experience-badge .years {
-            font-size: 3rem;
-            font-weight: 800;
             display: block;
+            transition: transform 0.5s ease;
         }
 
-        .experience-badge .text {
-            font-size: 0.9rem;
+        .about-image:hover img {
+            transform: scale(1.05);
         }
 
         .about-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
         }
 
-        .about-content p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .about-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .about-feature i {
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-
-        .about-feature span {
-            font-weight: 500;
-        }
-
-        /* Team Section */
-        .team {
-            padding: 6rem 0;
-            background: var(--white);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .team-card {
-            background: var(--light);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .team-image {
-            position: relative;
-            height: 350px;
-            overflow: hidden;
-        }
-
-        .team-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .team-card:hover .team-image img {
-            transform: scale(1.1);
-        }
-
-        .team-social {
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            right: 0;
-            background: rgba(255,255,255,0.95);
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            transition: bottom 0.3s;
-        }
-
-        .team-card:hover .team-social {
-            bottom: 0;
-        }
-
-        .team-social a {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-
-        .team-social a:hover {
-            transform: scale(1.2);
-        }
-
-        .team-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .team-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .team-info p {
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-        }
-
-        .testimonials-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .testimonial-stars {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.2rem;
-            color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 2rem;
+        .about-content h2 span {
+            color: var(--gold);
             font-style: italic;
         }
 
-        .testimonial-author {
+        .about-content p {
+            font-size: 16px;
+            line-height: 2;
+            margin-bottom: 25px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 32px;
+            color: var(--gold);
+            margin-top: 30px;
+        }
+
+        /* Fragrances Section */
+        .fragrances {
+            padding: 120px 5%;
+            background: var(--cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #666;
+            letter-spacing: 2px;
+        }
+
+        .fragrance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .fragrance-card {
+            background: var(--white);
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .fragrance-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .fragrance-image {
+            height: 400px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
-        }
-
-        .testimonial-author img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .testimonial-author-info h4 {
-            color: var(--dark);
-            margin-bottom: 0.25rem;
-        }
-
-        .testimonial-author-info p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* CTA Section */
-        .cta {
-            padding: 6rem 0;
-            background: var(--gradient);
             position: relative;
             overflow: hidden;
         }
 
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 600px;
-            height: 600px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
+        .fragrance-image img {
+            width: 70%;
+            height: 80%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
         }
 
-        .cta-container {
+        .fragrance-card:hover .fragrance-image img {
+            transform: scale(1.1);
+        }
+
+        .fragrance-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 8px 20px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .fragrance-info {
+            padding: 35px;
+        }
+
+        .fragrance-info h3 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .fragrance-type {
+            font-size: 13px;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .fragrance-description {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .fragrance-notes {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .note {
+            font-size: 12px;
+            padding: 5px 15px;
+            background: var(--cream);
+            border-radius: 20px;
+            color: #666;
+        }
+
+        .fragrance-price {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .buy-button {
+            width: 100%;
+            padding: 15px;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background: var(--gold);
+        }
+
+        /* Signature Collection */
+        .signature-collection {
+            padding: 120px 5%;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .signature-collection h2 {
+            font-size: 56px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 6px;
+        }
+
+        .signature-collection h2 span {
+            color: var(--gold);
+        }
+
+        .baccarat-showcase {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
+            padding: 60px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
             position: relative;
-            z-index: 1;
-            padding: 0 2rem;
         }
 
-        .cta h2 {
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 1rem;
+        .baccarat-showcase::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            pointer-events: none;
         }
 
-        .cta p {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2rem;
+        .baccarat-showcase h3 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .baccarat-showcase p {
+            font-size: 16px;
+            line-height: 2;
+            margin-bottom: 30px;
+            font-weight: 300;
+            opacity: 0.9;
         }
 
-        .btn-white {
+        /* Contact Section */
+        .contact {
+            padding: 120px 5%;
             background: var(--white);
-            color: var(--primary);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
         }
 
-        .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        .contact h2 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
         }
 
-        .btn-outline-white {
-            background: transparent;
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: 2px solid var(--white);
-            transition: all 0.3s;
+        .contact > p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 60px;
         }
 
-        .btn-outline-white:hover {
-            background: var(--white);
-            color: var(--primary);
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            padding: 40px;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .contact-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .contact-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
         }
 
         /* Footer */
-        .footer {
-            background: var(--dark);
+        footer {
+            background: var(--dark-gray);
             color: var(--white);
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-brand h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-brand p {
-            color: #94a3b8;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .footer-social a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .footer-social a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-column h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-contact li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            color: #94a3b8;
-        }
-
-        .footer-contact i {
-            color: var(--primary);
-            margin-top: 0.25rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #1e293b;
-            padding-top: 2rem;
+            padding: 60px 5% 30px;
             text-align: center;
-            color: #64748b;
-            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 2px;
+            background: var(--black);
+            transition: all 0.3s ease;
         }
 
         /* Responsive */
@@ -859,61 +585,41 @@
                 display: none;
             }
 
-            .mobile-menu-btn {
-                display: block;
+            .mobile-menu {
+                display: flex;
             }
 
-            .hero-container,
-            .about-grid {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                box-shadow: 20px 20px 0px var(--gold-light);
+            }
+
+            .about-image img {
+                height: 400px;
+            }
+
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .footer-grid {
+            .fragrance-grid {
                 grid-template-columns: 1fr;
             }
-
-            .hero-buttons,
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn-primary,
-            .btn-secondary,
-            .btn-white,
-            .btn-outline-white {
-                width: 100%;
-                justify-content: center;
-            }
         }
 
-        /* Animations */
+        /* Scroll Animation */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.6s, transform 0.6s;
+            transition: all 0.8s ease;
         }
 
         .fade-in.visible {
@@ -925,401 +631,319 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <i class="fas fa-tooth"></i>
-                Ivory Clinic
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">լխավոր</a></li>
-                <li><a href="#services">առայություններ</a></li>
-                <li><a href="#about">Մեր Մասին</a></li>
-                <li><a href="#team">Թիմ</a></li>
-                <li><a href="#testimonials">Գրախոսականներ</a></li>
-                <li><a href="#contact" class="nav-cta">Գրանցվել</a></li>
-            </ul>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
+    <nav id="navbar">
+        <div class="logo">MAISON <span>FK</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#fragrances">Fragrances</a></li>
+            <li><a href="#signature">Signature</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content fade-in">
-                <h1>Առողժ <span>պիտ</span> Ձեր Առողջության Համար</h1>
-                <p>Մենք առաջարկում ենք ժամանակակից ատամնաբուժական ծառայություններ՝ Ձեր պիտը կատարյալ դարձնելու համար։ Մեր փորձառու մասնագետները հոգ կտանեն Ձեր ատամների առողջության մասին։</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-primary">
-                        <i class="fas fa-calendar-check"></i>
-                        Գրանցվել Այժմ
-                    </a>
-                    <a href="#services" class="btn-secondary">
-                        Մեր Ծառայությունները
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-label">Տարի Փորձ</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">10K+</span>
-                        <span class="stat-label">Երջանիկ Հաճախորդ</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Երաշխիք</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image fade-in">
-                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=700&fit=crop" alt="Dental Care">
-                <div class="floating-card card-1">
-                    <i class="fas fa-shield-alt"></i>
-                    <div class="floating-card-text">
-                        <strong>Անվտանգ</strong>
-                        <span>100% երաշխիք</span>
-                    </div>
-                </div>
-                <div class="floating-card card-2">
-                    <i class="fas fa-user-md"></i>
-                    <div class="floating-card-text">
-                        <strong>Փորձառու</strong>
-                        <span>ասնագետներ</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-tag">եր Ծառայությունները</span>
-                <h2 class="section-title">Համալիր Ատամնաբուժական Խնամք</h2>
-                <p class="section-subtitle">Մենք առաջարկում ենք ատամնաբուժական ծառայությունների լայն տեսականի՝ Ձեր կարիքներին համապատասխան</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-teeth"></i>
-                    </div>
-                    <h3>րոֆեսիոնալ պիտակեցում</h3>
-                    <p>Ժամանակակից տեխնոլոգիաներով ատամների սպիտակեցում՝ առանց վնասելու էմալը։ Արդյունքը՝ մինչև 8 տոնով ավելի սպիտակ։</p>
-                    <a href="#" class="service-link">
-                        Իմանել Ավելին
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-tooth"></i>
-                    </div>
-                    <h3>Իմպլանտացիա</h3>
-                    <p>Ատամների իմպլանտացիա՝ օգտագործելով առաջատար արտադրողների բարձրորակ նյութեր։ Երաշխիք 10 տարի։</p>
-                    <a href="#" class="service-link">
-                        Իմանել Ավելին
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-teeth-open"></i>
-                    </div>
-                    <h3>Ուղղող Բուժում</h3>
-                    <p>Ատամների շարքի ուղղում՝ ամանակակից բրեկետներով և էլայներներով։ Անտեսանելի և հարմարավետ տարբերակներ։</p>
-                    <a href="#" class="service-link">
-                        Իմանել Ավելին
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h3>Բուժիչ տոմատոլոգիա</h3>
-                    <p>արիեսի և այլ ատամնային հիվանդությունների բուժում՝ ցավազրկմամբ։ Պահպանողական մոտեցում։</p>
-                    <a href="#" class="service-link">
-                        Իմանել Ավելին
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3>Մանկական Ատամնաբուժություն</h3>
-                    <p>Հատուկ մոտեցում երեխաներին՝ հարմարավետ և անվախ միջավայրում։ Խաղային մոտեցում բուժմանը։</p>
-                    <a href="#" class="service-link">
-                        Իմանել Ավելին
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-procedures"></i>
-                    </div>
-                    <h3>Վիրաբուժություն</h3>
-                    <p>Ատամների հեռացում, իմաստության ատամների վիրահատություն՝ նվազագույն ցավով և արագ վերականգնմամբ։</p>
-                    <a href="#" class="service-link">
-                        Իմանել Ավելին
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="hero-content">
+            <h1>MAISON <span class="highlight">FRANCIS KURKDJIAN</span></h1>
+            <p class="hero-subtitle">The Art of Perfumery</p>
+            <p class="hero-text">
+                "Wearing a fragrance is like wearing a second skin. 
+                It's an intimate experience that reflects your personality, 
+                your emotions, and your dreams."
+            </p>
+            <a href="#fragrances" class="cta-button">Discover Collection</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-images fade-in">
-                    <img src="https://images.unsplash.com/photo-1629909615184-742a9549f0d5?w=400&h=500&fit=crop" alt="Dental Clinic">
-                    <img src="https://images.unsplash.com/photo-1606811971618-4484d45492c3?w=400&h=300&fit=crop" alt="Dental Equipment">
-                    <div class="experience-badge">
-                        <span class="years">15+</span>
-                        <span class="text">Տարի<br>Փորձ</span>
-                    </div>
+        <div class="about-image fade-in">
+            <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=800" alt="Francis Kurkdjian">
+        </div>
+        <div class="about-content fade-in">
+            <h2>The <span>Master</span> Perfumer</h2>
+            <p>
+                Francis Kurkdjian is one of the world's most celebrated perfumers. 
+                Born in 1969, he created his first fragrance at the age of 25 - 
+                the iconic Jean Paul Gaultier Le Male, which revolutionized 
+                masculine perfumery.
+            </p>
+            <p>
+                In 2009, he founded Maison Francis Kurkdjian with the vision of 
+                creating contemporary fragrances that embody the French art of 
+                living. His creations are characterized by their elegance, 
+                sophistication, and timeless appeal.
+            </p>
+            <p>
+                From the legendary Baccarat Rouge 540 to the luminous Aqua Universalis, 
+                each fragrance tells a story of luxury, craftsmanship, and 
+                olfactory excellence.
+            </p>
+            <div class="signature">Francis Kurkdjian</div>
+        </div>
+    </section>
+
+    <!-- Fragrances Section -->
+    <section class="fragrances" id="fragrances">
+        <div class="section-header fade-in">
+            <h2>THE COLLECTION</h2>
+            <p>Discover our signature fragrances</p>
+        </div>
+
+        <div class="fragrance-grid">
+            <!-- Baccarat Rouge 540 -->
+            <div class="fragrance-card fade-in">
+                <div class="fragrance-badge">Bestseller</div>
+                <div class="fragrance-image">
+                    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f53e?w=600" alt="Baccarat Rouge 540">
                 </div>
-                <div class="about-content fade-in">
-                    <span class="section-tag">Մեր Մասին</span>
-                    <h2>Ժամանակակից Կլինիկա՝ Ձեր Առողջության Համար</h2>
-                    <p>Ivory Clinic-ը առաջատար ատամնաբուժական կլինիկա է, որը հիմնադրվել է 2009 թվականին։ Մենք հպարտանում ենք մեր հազարավոր գոհ հաճախորդներով։</p>
-                    <p>Մեր կլինիկան օժտված է վերջին տեխնոլոգիաներով և սարքավորումներով, ինչը թույլ է տալիս ապահովել բուժման առավելագույն որակ և հարմարավետություն։</p>
-                    <div class="about-features">
-                        <div class="about-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Ժամանակակից Սարքավորումներ</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Փորձառու Մասնագետներ</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Անհատական Մոտեցում</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Մատչելի Գներ</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Երաշխիք Բոլոր Ծառայությունների</span>
-                        </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Հարմարավետ Միջավայր</span>
-                        </div>
+                <div class="fragrance-info">
+                    <h3>Baccarat Rouge 540</h3>
+                    <div class="fragrance-type">Extrait de Parfum</div>
+                    <p class="fragrance-description">
+                        A luminous and sophisticated amber floral fragrance. 
+                        The perfect alchemy of jasmine, saffron, and amberwood 
+                        creates an unforgettable scent trail.
+                    </p>
+                    <div class="fragrance-notes">
+                        <span class="note">Jasmine</span>
+                        <span class="note">Saffron</span>
+                        <span class="note">Amberwood</span>
+                        <span class="note">Cedar</span>
                     </div>
-                    <a href="#contact" class="btn-primary">
-                        Գրանցվել Խորհրդատվության
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="fragrance-price">$325</div>
+                    <button class="buy-button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Grand Soir -->
+            <div class="fragrance-card fade-in">
+                <div class="fragrance-image">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600" alt="Grand Soir">
+                </div>
+                <div class="fragrance-info">
+                    <h3>Grand Soir</h3>
+                    <div class="fragrance-type">Eau de Parfum</div>
+                    <p class="fragrance-description">
+                        A warm, oriental fragrance that captures the essence 
+                        of Parisian nights. Benzoin, labdanum, and vanilla 
+                        create a sensual and addictive composition.
+                    </p>
+                    <div class="fragrance-notes">
+                        <span class="note">Benzoin</span>
+                        <span class="note">Labdanum</span>
+                        <span class="note">Vanilla</span>
+                        <span class="note">Amber</span>
+                    </div>
+                    <div class="fragrance-price">$285</div>
+                    <button class="buy-button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Aqua Universalis -->
+            <div class="fragrance-card fade-in">
+                <div class="fragrance-image">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600" alt="Aqua Universalis">
+                </div>
+                <div class="fragrance-info">
+                    <h3>Aqua Universalis</h3>
+                    <div class="fragrance-type">Eau de Parfum</div>
+                    <p class="fragrance-description">
+                        A fresh, luminous fragrance that celebrates purity and 
+                        lightness. Bergamot, lily of the valley, and white musk 
+                        create a clean, radiant scent.
+                    </p>
+                    <div class="fragrance-notes">
+                        <span class="note">Bergamot</span>
+                        <span class="note">Lily</span>
+                        <span class="note">White Musk</span>
+                        <span class="note">Citrus</span>
+                    </div>
+                    <div class="fragrance-price">$265</div>
+                    <button class="buy-button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- À la Rose -->
+            <div class="fragrance-card fade-in">
+                <div class="fragrance-image">
+                    <img src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?w=600" alt="À la Rose">
+                </div>
+                <div class="fragrance-info">
+                    <h3>À la Rose</h3>
+                    <div class="fragrance-type">Eau de Parfum</div>
+                    <p class="fragrance-description">
+                        A modern rose fragrance that captures the essence of 
+                        a rose garden at dawn. Rose essence, rose absolute, 
+                        and musk create a romantic and elegant composition.
+                    </p>
+                    <div class="fragrance-notes">
+                        <span class="note">Rose</span>
+                        <span class="note">Musk</span>
+                        <span class="note">Citrus</span>
+                        <span class="note">Woody</span>
+                    </div>
+                    <div class="fragrance-price">$285</div>
+                    <button class="buy-button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Oud -->
+            <div class="fragrance-card fade-in">
+                <div class="fragrance-badge">Exclusive</div>
+                <div class="fragrance-image">
+                    <img src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?w=600" alt="Oud">
+                </div>
+                <div class="fragrance-info">
+                    <h3>Oud</h3>
+                    <div class="fragrance-type">Eau de Parfum</div>
+                    <p class="fragrance-description">
+                        A powerful, woody fragrance featuring precious oud wood. 
+                        Combined with rose and saffron, it creates an intense, 
+                        mysterious, and luxurious scent.
+                    </p>
+                    <div class="fragrance-notes">
+                        <span class="note">Oud Wood</span>
+                        <span class="note">Rose</span>
+                        <span class="note">Saffron</span>
+                        <span class="note">Spices</span>
+                    </div>
+                    <div class="fragrance-price">$395</div>
+                    <button class="buy-button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Gentle Fluidity -->
+            <div class="fragrance-card fade-in">
+                <div class="fragrance-image">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794f61f?w=600" alt="Gentle Fluidity">
+                </div>
+                <div class="fragrance-info">
+                    <h3>Gentle Fluidity</h3>
+                    <div class="fragrance-type">Eau de Parfum</div>
+                    <p class="fragrance-description">
+                        Two fragrances, one name. Gold is warm and sensual with 
+                        vanilla and musk, while Silver is fresh and aromatic 
+                        with juniper berries and coriander.
+                    </p>
+                    <div class="fragrance-notes">
+                        <span class="note">Juniper</span>
+                        <span class="note">Vanilla</span>
+                        <span class="note">Musk</span>
+                        <span class="note">Coriander</span>
+                    </div>
+                    <div class="fragrance-price">$285</div>
+                    <button class="buy-button">Add to Cart</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team" id="team">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-tag">եր Թիմը</span>
-                <h2 class="section-title">Հանդիպեք Մեր Մասնագետներին</h2>
-                <p class="section-subtitle">եր փորձառու և որակյալ մասնագետները պատրաստ են հոգ տանել Ձեր ատամների առողջության մասին</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-card fade-in">
-                    <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop" alt="Doctor">
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>Դոկտ. Արմեն Պետրոսյան</h3>
-                        <p>Գլխավոր Բժիշկ</p>
-                    </div>
-                </div>
-                <div class="team-card fade-in">
-                    <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=500&fit=crop" alt="Doctor">
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>Դոկտ. Լիլիթ Հովհաննիսյան</h3>
-                        <p>Օրթոդոնտ</p>
-                    </div>
-                </div>
-                <div class="team-card fade-in">
-                    <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1537368910667-897f17002d2a?w=400&h=500&fit=crop" alt="Doctor">
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>Դոկտ. Գոռ Սարգսյան</h3>
-                        <p>իրաբույժ-Իմպլանտոլոգ</p>
-                    </div>
-                </div>
-                <div class="team-card fade-in">
-                    <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop" alt="Doctor">
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>Դոկտ. Նարե Խաչատրյան</h3>
-                        <p>Մանկական Ատամնաբույժ</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Signature Collection -->
+    <section class="signature-collection" id="signature">
+        <h2>THE <span>ICON</span></h2>
+        <div class="baccarat-showcase fade-in">
+            <h3>Baccarat Rouge 540</h3>
+            <p>
+                Created in 2015 to celebrate the 250th anniversary of the 
+                Baccarat crystal house, this fragrance has become a modern 
+                classic. Its unique blend of jasmine, saffron, and amberwood 
+                creates a scent that is both powerful and ethereal.
+            </p>
+            <p>
+                "I wanted to create a fragrance that would capture the 
+                brilliance and radiance of Baccarat crystal - something 
+                that would leave a luminous trail wherever you go."
+            </p>
+            <a href="#contact" class="cta-button">Experience It</a>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-tag">Գրախոսականներ</span>
-                <h2 class="section-title">Ի՞նչ են Ասում Մեր Հաճախորդները</h2>
-                <p class="section-subtitle">Մեր հաճախորդների գոհունակությունը մեր ամենամեծ պարգևն է</p>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>GET IN TOUCH</h2>
+        <p>Visit our boutiques or contact us for a personalized consultation</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item fade-in">
+                <div class="contact-icon">📍</div>
+                <h3>Boutiques</h3>
+                <p>
+                    Paris • London • New York<br>
+                    Dubai • Tokyo • Los Angeles
+                </p>
             </div>
-            <div class="testimonials-slider fade-in">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"ատ գոհ եմ Ivory Clinic-ից։ Իմ ատամների սպիտակեցումը կատարեցին շատ պրոեսիոնալ մակարդակով։ Արդյունքը գերազանցեց իմ սպասելիքները։ Խորհուրդ եմ տալիս բոլորին։"</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Client">
-                        <div class="testimonial-author-info">
-                            <h4>Արմեն Մ.</h4>
-                            <p>Երևան</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="contact-item fade-in">
+                <div class="contact-icon"></div>
+                <h3>Contact</h3>
+                <p>
+                    +33 1 42 60 00 00<br>
+                    contact@maisonkurkdjian.com
+                </p>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta" id="contact">
-        <div class="cta-container">
-            <h2>Պատրա՞ստ Եք Ժպտալ Ավելի Վստահ</h2>
-            <p>Գրանցվեք անվճար խորհրդատվության և սկսեք Ձեր ճանապարհը դեպի կատարյալ ժպիտ</p>
-            <div class="cta-buttons">
-                <a href="tel:+37410123456" class="btn-white">
-                    <i class="fas fa-phone"></i>
-                    Զանգահարել Հիմա
-                </a>
-                <a href="#" class="btn-outline-white">
-                    <i class="fas fa-calendar"></i>
-                    Առցանց Գրանցվել
-                </a>
+            <div class="contact-item fade-in">
+                <div class="contact-icon">✉️</div>
+                <h3>Newsletter</h3>
+                <p>
+                    Subscribe for exclusive offers<br>
+                    and new fragrance launches
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>
-                        <i class="fas fa-tooth"></i>
-                        Ivory Clinic
-                    </h3>
-                    <p>եր վստահելի գործընկերը ատամնաբուժական խնամքի հարցում։ Մենք հոգ ենք տանում եր ժպիտի մասին։</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h4>Արագ Հղումներ</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Գլխավոր</a></li>
-                        <li><a href="#about">եր Մասին</a></li>
-                        <li><a href="#services">Ծառայություններ</a></li>
-                        <li><a href="#team">Թիմ</a></li>
-                        <li><a href="#contact">Կապ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Ծառայություններ</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Ատամների Սպիտակեցում</a></li>
-                        <li><a href="#">Իմպլանտացիա</a></li>
-                        <li><a href="#">Ուղղող Բուժում</a></li>
-                        <li><a href="#">Բուժիչ Ստոմատոլոգիա</a></li>
-                        <li><a href="#">Մանկական Ատամնաբուժություն</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Կապի Տվյալներ</h4>
-                    <ul class="footer-links footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Երևան, Հայաստան<br>Հասցե՝ Օրինակ փ. 123</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+374 10 123456</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@ivoryclinic.am</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Երկ-Ուրբ՝ 9:00 - 20:00<br>Շբթ՝ 10:00 - 18:00</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ivory Clinic. Բոլոր իրավունքները պաշտպանված են։</p>
-            </div>
+    <footer>
+        <div class="footer-logo">MAISON <span>FRANCIS KURKDJIAN</span></div>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
         </div>
+        <p class="footer-text">
+            © 2026 Maison Francis Kurkdjian. All rights reserved.<br>
+            Crafted with elegance in Paris
+        </p>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        }
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.boxShadow = '0 2px 30px rgba(0,0,0,0.1)';
+                navbar.style.padding = '15px 5%';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+                navbar.style.padding = '20px 5%';
+            }
+        });
 
-        // Scroll Animation
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver(function(entries) {
@@ -1330,30 +954,32 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            } else {
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
-            }
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
 
-        // Smooth Scroll for Safari
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        // Add to cart functionality (demo)
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const fragrance = this.closest('.fragrance-info').querySelector('h3').textContent;
+                alert(`${fragrance} has been added to your cart!`);
             });
+        });
+
+        // Mobile menu toggle (basic)
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'white';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.padding = '20px';
+            navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
         });
     </script>
 </body>
