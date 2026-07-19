@@ -3,590 +3,664 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison Francis Kurkdjian | Exclusive Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <title>Հոմմե Ա Լա Ռոզ | Հատուկ Բույրեր</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         :root {
-            --gold: #C5A059;
-            --black: #0a0a0a;
-            --white: #fff;
-            --cream: #f8f6f0;
+            --primary: #8b5a2b;
+            --secondary: #d4af37;
+            --light: #f8f4f0;
+            --dark: #2c2c2c;
+            --accent: #e07a5f;
         }
-
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--cream);
-            color: var(--black);
-            overflow-x: hidden;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
         }
-
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
+        
+        .container {
             width: 100%;
-            padding: 25px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(248, 246, 240, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-
-        .logo {
-            font-size: 18px;
-            font-weight: 600;
-            letter-spacing: 4px;
-            text-transform: uppercase;
+        
+        section {
+            padding: 80px 0;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
+        
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
         }
-
-        .nav-links a {
-            color: var(--black);
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
             text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 2px;
+            font-weight: 600;
             text-transform: uppercase;
-            transition: color 0.3s;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            font-size: 16px;
         }
-
-        .nav-links a:hover { color: var(--gold); }
-
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            color: var(--accent);
+        }
+        
         /* Hero Section */
         .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.shopify.com/s/files/1/1021/7937/3424/files/ALR-26_HARL_SOLO_ALL_triptych_square_desktop_mobile_1080x1080_1a9e0cca-91bb-44ea-9201-c7a9f4ad4ead.webp?v=1781276150') center/cover no-repeat;
             height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #f8f6f0 0%, #e8e4d8 100%);
+            color: white;
             position: relative;
-            overflow: hidden;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: pulse 6s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.3); opacity: 0.8; }
-        }
-
+        
         .hero-content {
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1.5s ease;
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        
         .hero h1 {
-            font-size: 96px;
-            font-weight: 300;
-            letter-spacing: 8px;
+            font-size: 4rem;
             margin-bottom: 20px;
-            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-
+        
         .hero p {
-            font-size: 14px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #666;
+            font-size: 1.8rem;
             margin-bottom: 40px;
         }
-
-        .hero-btn {
-            display: inline-block;
-            padding: 18px 50px;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
+        
+        /* Problem Section */
+        .problem {
+            background-color: white;
         }
-
-        .hero-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gold);
-            transition: left 0.4s;
-            z-index: -1;
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-
-        .hero-btn:hover {
-            color: var(--black);
+        
+        .problem-item {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
-
-        .hero-btn:hover::before {
-            left: 0;
+        
+        .problem-item:hover {
+            transform: translateY(-10px);
         }
-
-        /* Collection Section */
-        .collection {
-            padding: 120px 50px;
-            background: var(--white);
+        
+        .problem-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
-
-        .section-header {
+        
+        /* Benefits Section */
+        .benefits {
+            background-color: var(--light);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
             text-align: center;
-            margin-bottom: 100px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
-
-        .section-header h2 {
-            font-size: 56px;
-            font-weight: 300;
+        
+        .benefit-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--secondary);
             margin-bottom: 20px;
         }
-
-        .section-header p {
-            font-size: 14px;
-            letter-spacing: 3px;
-            color: #999;
-            text-transform: uppercase;
+        
+        /* Features Section */
+        .features {
+            background-color: white;
         }
-
-        /* Products Grid */
-        .products-grid {
+        
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 60px;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-
-        .product-card {
-            background: var(--cream);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            cursor: pointer;
+        
+        .feature-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
         }
-
-        .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
         }
-
-        .product-visual {
-            height: 450px;
+        
+        /* Social Proof */
+        .social-proof {
+            background: linear-gradient(to right, var(--light), #f0e6e0);
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Baccarat Rouge 540 - Red/Gold */
-        .baccarat {
-            background: linear-gradient(135deg, #8a1c1c 0%, #c44545 50%, #C5A059 100%);
-        }
-
-        /* Grand Soir - Amber/Gold */
-        .grand-soir {
-            background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #8B6914 100%);
-        }
-
-        /* Oud Satin Mood - Purple/Black */
-        .oud-satin {
-            background: linear-gradient(135deg, #2c1810 0%, #4a2c2a 50%, #1a0f0f 100%);
-        }
-
-        /* Aqua Universalis - White/Blue */
-        .aqua {
-            background: linear-gradient(135deg, #e8f4f8 0%, #b8d4e0 50%, #8ab4c4 100%);
-        }
-
-        /* À la Rose - Pink/Rose */
-        .a-la-rose {
-            background: linear-gradient(135deg, #f5e6e8 0%, #e8b4b8 50%, #d4999d 100%);
-        }
-
-        .bottle-silhouette {
-            width: 120px;
-            height: 280px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px 10px 5px 5px;
-            position: relative;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            transition: transform 0.5s;
-        }
-
-        .product-card:hover .bottle-silhouette {
-            transform: scale(1.1) rotate(2deg);
-        }
-
-        .bottle-silhouette::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 5px;
-        }
-
-        .product-info {
-            padding: 40px 30px;
-            text-align: center;
-            background: var(--white);
-        }
-
-        .product-info h3 {
-            font-size: 32px;
-            font-weight: 400;
-            margin-bottom: 10px;
-            color: var(--black);
-        }
-
-        .product-type {
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold);
             margin-bottom: 20px;
         }
-
-        .product-description {
-            font-size: 14px;
-            line-height: 1.8;
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .product-price {
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 25px;
-            color: var(--black);
-        }
-
-        .product-btn {
-            display: inline-block;
-            padding: 14px 40px;
-            border: 1px solid var(--black);
-            color: var(--black);
-            text-decoration: none;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
-
-        .product-btn:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-
-        /* Featured Section */
-        .featured {
-            padding: 150px 50px;
-            background: var(--black);
-            color: var(--white);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .featured-visual {
-            height: 600px;
-            background: linear-gradient(135deg, #8a1c1c 0%, #c44545 50%, #C5A059 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .featured-visual::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            animation: pulse 4s ease-in-out infinite;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.5rem;
         }
-
-        .featured-bottle {
-            width: 150px;
-            height: 350px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 12px 12px 6px 6px;
-            position: relative;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-            z-index: 2;
+        
+        .stars {
+            color: #f8d12d;
+            margin-bottom: 10px;
         }
-
-        .featured-bottle::before {
-            content: '';
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 6px;
-        }
-
-        .featured-content h2 {
-            font-size: 64px;
-            font-weight: 300;
-            margin-bottom: 30px;
-            color: var(--gold);
-        }
-
-        .featured-content p {
-            font-size: 16px;
-            line-height: 2;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-
-        .featured-btn {
-            display: inline-block;
-            padding: 18px 50px;
-            background: var(--gold);
-            color: var(--black);
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .featured-btn:hover {
-            background: var(--white);
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--cream);
-            padding: 60px 50px;
+        
+        /* Offer Section */
+        .offer {
+            background-color: var(--light);
             text-align: center;
-            border-top: 1px solid rgba(0,0,0,0.05);
         }
-
-        footer p {
-            font-size: 12px;
-            color: #999;
-            letter-spacing: 1px;
+        
+        .price-box {
+            display: inline-block;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
         }
-
+        
+        .price {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .discount {
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .included {
+            list-style: none;
+            margin: 30px 0;
+        }
+        
+        .included li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+            display: flex;
+            align-items: center;
+        }
+        
+        .included li i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        /* Comparison Section */
+        .comparison {
+            background-color: white;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .check {
+            color: #4caf50;
+            font-size: 1.5rem;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: linear-gradient(to right, var(--light), #f0e6e0);
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.show {
+            max-height: 200px;
+            padding: 0 20px 20px;
+        }
+        
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://cdn.shopify.com/s/files/1/1021/7937/3424/files/3700559609989_HOMME_A_LA_ROSE_EDT_70ML_1.webp?v=1781276182') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.8rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
         /* Responsive */
-        @media (max-width: 968px) {
-            .hero h1 { font-size: 48px; }
-            .featured { grid-template-columns: 1fr; gap: 50px; }
-            .products-grid { grid-template-columns: 1fr; }
-            nav { padding: 20px 30px; }
-            .nav-links { gap: 20px; }
-        }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .price {
+                font-size: 3.5rem;
+            }
+            
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .final-cta p {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <nav>
-        <div class="logo">Maison FK</div>
-        <ul class="nav-links">
-            <li><a href="#collection">Collection</a></li>
-            <li><a href="#featured">Featured</a></li>
-        </ul>
-    </nav>
-
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>MAISON FRANCIS KURKDJIAN</h1>
-            <p>The Art of Perfumery</p>
-            <a href="#collection" class="hero-btn">Discover Collection</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ձեր Հատուկ Բույրը Հիմա</h1>
+                <p>Համարձակվեք ստեղծել ձեր անհատական բույրը բնական բաղադրիչներով</p>
+                <a href="#offer" class="btn">Գնել Այժմ</a>
+            </div>
         </div>
     </section>
 
-    <section class="collection" id="collection">
-        <div class="section-header fade-in">
-            <h2>The Signature Collection</h2>
-            <p>Five Iconic Fragrances</p>
-        </div>
-
-        <div class="products-grid">
-            
-            <!-- Baccarat Rouge 540 -->
-            <div class="product-card fade-in">
-                <div class="product-visual baccarat">
-                    <div class="bottle-silhouette"></div>
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>Ձեր Հիմնական Ցավոտ Կետերը</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <h3>Համապատասխանության բացակայություն</h3>
+                    <p>Չգտնում եք բույր, որը համապատասխանում է ձեր ոճին և երեկոյան դեպքերին:</p>
                 </div>
-                <div class="product-info">
-                    <h3>Baccarat Rouge 540</h3>
-                    <div class="product-type">Extrait de Parfum</div>
-                    <p class="product-description">
-                        A luminous amber floral that captures the brilliance of Baccarat crystal.
-                    </p>
-                    <div class="product-price">$325</div>
-                    <a href="#" class="product-btn">Discover</a>
+                <div class="problem-item">
+                    <h3>Երկարատևության խնդիր</h3>
+                    <p>Ձեր ընտրած բույրերը երկար ժամանակ չեն տևում, որոնք արագ են ելնում:</p>
+                </div>
+                <div class="problem-item">
+                    <h3>Բարդ ընտրություն</h3>
+                    <p>Շատ դժվար է ընտրել բույր առանց հասկանալու, թե ինչպես կհնչի ձեր մարմնի վրա:</p>
                 </div>
             </div>
-
-            <!-- Grand Soir -->
-            <div class="product-card fade-in">
-                <div class="product-visual grand-soir">
-                    <div class="bottle-silhouette"></div>
-                </div>
-                <div class="product-info">
-                    <h3>Grand Soir</h3>
-                    <div class="product-type">Eau de Parfum</div>
-                    <p class="product-description">
-                        A warm oriental fragrance capturing the essence of Parisian nights.
-                    </p>
-                    <div class="product-price">$285</div>
-                    <a href="#" class="product-btn">Discover</a>
-                </div>
-            </div>
-
-            <!-- Oud Satin Mood -->
-            <div class="product-card fade-in">
-                <div class="product-visual oud-satin">
-                    <div class="bottle-silhouette"></div>
-                </div>
-                <div class="product-info">
-                    <h3>Oud Satin Mood</h3>
-                    <div class="product-type">Eau de Parfum</div>
-                    <p class="product-description">
-                        A powerful, sensual oud fragrance with violet and vanilla.
-                    </p>
-                    <div class="product-price">$310</div>
-                    <a href="#" class="product-btn">Discover</a>
-                </div>
-            </div>
-
-            <!-- Aqua Universalis -->
-            <div class="product-card fade-in">
-                <div class="product-visual aqua">
-                    <div class="bottle-silhouette"></div>
-                </div>
-                <div class="product-info">
-                    <h3>Aqua Universalis</h3>
-                    <div class="product-type">Eau de Parfum</div>
-                    <p class="product-description">
-                        A fresh, luminous fragrance celebrating purity and lightness.
-                    </p>
-                    <div class="product-price">$265</div>
-                    <a href="#" class="product-btn">Discover</a>
-                </div>
-            </div>
-
-            <!-- À la Rose -->
-            <div class="product-card fade-in">
-                <div class="product-visual a-la-rose">
-                    <div class="bottle-silhouette"></div>
-                </div>
-                <div class="product-info">
-                    <h3>À la Rose</h3>
-                    <div class="product-type">Eau de Parfum</div>
-                    <p class="product-description">
-                        A modern rose fragrance capturing a rose garden at dawn.
-                    </p>
-                    <div class="product-price">$285</div>
-                    <a href="#" class="product-btn">Discover</a>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <section class="featured" id="featured">
-        <div class="featured-visual fade-in">
-            <div class="featured-bottle"></div>
-        </div>
-        <div class="featured-content fade-in">
-            <h2>Baccarat Rouge 540</h2>
-            <p>
-                Born from the encounter between Francis Kurkdjian and the legendary Baccarat crystal house, 
-                this fragrance translates the refined elegance of Baccarat crystal into olfactory terms. 
-                An amber floral that leaves a mineral and faceted trail, like light passing through crystal.
-            </p>
-            <a href="#" class="featured-btn">Shop Now</a>
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Առավելություններ</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Բնական Բաղադրիչներ</h3>
+                    <p>Մեր բույրերը պատրաստված են բնական բաղադրիչներից առանց քիմիական նյութերի:</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Երկարատև Տևողություն</h3>
+                    <p>Մեր բույրերը տևում են մինչև 24 ժամ ձեր մարմնի վրա:</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Հատուկ Համադրություն</h3>
+                    <p>Հնարավորություն ունեք ստեղծել ձեր հատուկ բույրը համաձայն ձեր համար համապատասխանող բաղադրիչների:</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3>Բոլոր Սեզոնների Համար</h3>
+                    <p>Ձեր բույրը համապատասխանում է բոլոր սեզոններին և դեպքերին:</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>© 2026 Maison Francis Kurkdjian. All Rights Reserved.</p>
-    </footer>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Ապրանքի Հատկություններ</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Հատուկ Համադրություն</h3>
+                    <p>Մեր համակարգը թույլ է տալիս ձեզ ստեղծել բույր ձեր համար համապատասխանող բաղադրիչներից, որոնք համապատասխանում են ձեր ոճին:</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Երկարատև Տևողություն</h3>
+                    <p>Մեր բույրերը պատրաստված են հատուկ տեխնոլոգիայով, որը երաշխավորում է երկարատև տևողություն մինչև 24 ժամ:</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Բնական Բաղադրիչներ</h3>
+                    <p>Մեր բույրերը պատրաստված են բնական բաղադրիչներից առանց քիմիական նյութերի, որոնք վնասում են մաշկին:</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2>Հաճախորդների Կարծիքներ</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">ՀՀ</div>
+                        <div>
+                            <h3>Հայկ Հովհաննիսյան</h3>
+                            <p>Հաճախորդ 2 տարի</p>
+                        </div>
+                    </div>
+                    <p>«Այս բույրը ամենալավն է, որ ես երբևէ օգտագործել եմ: Երկարատև է և համապատասխանում է բոլոր դեպքերին»</p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">ԱՊ</div>
+                        <div>
+                            <h3>Աննա Պետրոսյան</h3>
+                            <p>Հաճախորդ 1 տարի</p>
+                        </div>
+                    </div>
+                    <p>«Շատ հեշտ է ստեղծել իմ հատուկ բույրը: Բացի այդ, բնական բաղադրիչների պատճառով չեմ զգում մաշկի խանգարում»</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer" id="offer">
+        <div class="container">
+            <h2>Հատուկ Առաջարկ</h2>
+            <div class="price-box">
+                <div class="discount">20% Զեղչ</div>
+                <div class="price">15,000 դրամ</div>
+                <p>Հասանելի է միայն այսօր</p>
+                
+                <ul class="included">
+                    <li><i class="fas fa-check"></i> 70ml բույրի բուտյլ</li>
+                    <li><i class="fas fa-check"></i> Հատուկ համադրության գիդ</li>
+                    <li><i class="fas fa-check"></i> Անվճար առաքում ՀՀ-ում</li>
+                    <li><i class="fas fa-check"></i> 30 օրվա վերադարձման երաշխիք</li>
+                </ul>
+                
+                <a href="#final-cta" class="btn btn-accent">Գնել Այժմ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+        <div class="container">
+            <h2>Մեր Ապրանքը Համեմատած Կոնկուրենտների Հետ</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Հատկություն</th>
+                        <th>Հոմմե Ա Լա Ռոզ</th>
+                        <th>Կոնկուրենտներ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Երկարատևություն</td>
+                        <td><i class="fas fa-check check"></i> 24 ժամ</td>
+                        <td><i class="fas fa-times"></i> 8-12 ժամ</td>
+                    </tr>
+                    <tr>
+                        <td>Բնական բաղադրիչներ</td>
+                        <td><i class="fas fa-check check"></i> 100%</td>
+                        <td><i class="fas fa-times"></i> 50-70%</td>
+                    </tr>
+                    <tr>
+                        <td>Հատուկ համադրություն</td>
+                        <td><i class="fas fa-check check"></i> Այո</td>
+                        <td><i class="fas fa-times"></i> Ոչ</td>
+                    </tr>
+                    <tr>
+                        <td>Անվճար առաքում</td>
+                        <td><i class="fas fa-check check"></i> Այո</td>
+                        <td><i class="fas fa-times"></i> Տարածքային</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Հաճախ Տրվող Հարցեր</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Ինչպե՞ս է աշխատում հատուկ համադրության համակարգը:
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Ձեզ տրամադրվում է հատուկ գիդ, որտեղ կարող եք ընտրել ձեր համար համապատասխանող բաղադրիչները: Այնուհետև մենք պատրաստում ենք ձեր հատուկ բույրը:</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Որքա՞ն է առաքման ժամանակը:
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Առաքումը տեղի է ունենում 2-3 աշխատանքային օրվա ընթացքում ՀՀ-ում և 5-7 օրվա ընթացքում երկրներում:</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Կարո՞ղ եմ վերադարձնել ապրանքը:
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Այո, եթե ձեզ հաճույք չէ պատճառում բույրը, կարող եք վերադարձնել այն 30 օրվա ընթացքում առանց հարցերի:</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Ինչպե՞ս եմ հասկանում, թե որ բաղադրիչները են համապատասխանում ինձ:
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Գիդում կան հատուկ հարցազրույցներ, որոնք օգնում են հասկանալ, թե որ բաղադրիչներն են համապատասխանում ձեր ոճին և համարձակությանը:</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="final-cta">
+        <div class="container">
+            <h2>Համարձակվեք Ձեր Հատուկ Բույրը Ստեղծել</h2>
+            <p>Հասանելի է միայն այսօր հետ դրամային գործարքով և անվճար առաքումով:</p>
+            <a href="#offer" class="btn">Գնել Այժմ</a>
+        </div>
+    </section>
 
     <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Fade in animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        function toggleFaq(element) {
+            const faqItem = element.closest('.faq-item');
+            const answer = faqItem.querySelector('.faq-answer');
+            const toggle = element.querySelector('.faq-toggle');
+            
+            faqItem.classList.toggle('active');
+            
+            if (faqItem.classList.contains('active')) {
+                answer.classList.add('show');
+                toggle.innerHTML = '<i class="fas fa-chevron-up"></i>';
+            } else {
+                answer.classList.remove('show');
+                toggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
+            }
+        }
     </script>
-
 </body>
 </html>
