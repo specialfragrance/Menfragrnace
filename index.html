@@ -1,545 +1,648 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Հոմմ Ա Լա Ռոզ | Հայտնաբերեք ձեր հոտը</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
 
-        :root {
-            --primary: #d4af37;
-            --dark: #1a1a1a;
-            --light: #f8f8f8;
-            --gray: #333333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            line-height: 1.6;
-            color: var(--gray);
-            background-color: var(--light);
-        }
+<title>Homme à la Rose | Luxury Fragrance</title>
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+<link rel="stylesheet" href="style.css">
 
-        section {
-            padding: 80px 0;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-        h1, h2, h3 {
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn:hover {
-            background: #b8860b;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://cdn.shopify.com/s/files/1/1021/7937/3424/files/ALR-26_HARL_SOLO_ALL_triptych_square_desktop_mobile_1080x1080_1a9e0cca-91bb-44ea-9201-c7a9f4ad4ead.webp?v=1781276150') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            position: relative;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-
-        /* Problems Section */
-        .problems h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--dark);
-        }
-
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .problem-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .problem-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        /* Benefits Section */
-        .benefits h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--dark);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .benefit-card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        /* Features Section */
-        .features h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--dark);
-            text-align: center;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            border-left: 4px solid var(--primary);
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        /* Social Proof */
-        .social-proof {
-            background: var(--dark);
-            color: white;
-        }
-
-        .social-proof h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: white;
-        }
-
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .testimonial .name {
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .stars {
-            color: #ffc107;
-            font-size: 1.2rem;
-        }
-
-        /* Offer Section */
-        .offer {
-            background: linear-gradient(to right, #f5f7fa 0%, #e4edf5 100%);
-            text-align: center;
-        }
-
-        .offer h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .price {
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 20px 0;
-        }
-
-        .discount {
-            font-size: 1.5rem;
-            color: #e74c3c;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-
-        .offer-details {
-            max-width: 600px;
-            margin: 0 auto 40px;
-            font-size: 1.2rem;
-        }
-
-        /* Comparison Section */
-        .comparison h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--dark);
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background: var(--dark);
-            color: white;
-            font-weight: 600;
-        }
-
-        tr:nth-child(even) {
-            background: #f9f9f9;
-        }
-
-        .check {
-            color: #28a745;
-            font-weight: bold;
-        }
-
-        /* FAQ Section */
-        .faq h2 {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--dark);
-            text-align: center;
-        }
-
-        .faq-grid {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            border-left: 4px solid var(--primary);
-        }
-
-        .faq-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        /* Final CTA */
-        .final-cta {
-            background: linear-gradient(135deg, var(--dark) 0%, #111 100%);
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-        }
-
-        .final-cta h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .final-cta p {
-            font-size: 1.5rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.3rem;
-            }
-            
-            .btn {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-            
-            h1, h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
 </head>
+
+
 <body>
-    <!-- Hero Block -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Հայտնաբերեք ձեր հոտը՝ Հոմմ Ա Լա Ռոզ</h1>
-            <p>Բացառիկ հոտ, որը հետևում է ձեզ ամբողջ օրվա ընթացքում</p>
-            <a href="#offer" class="btn">Գնել հիմի</a>
-        </div>
-    </section>
 
-    <!-- 2️⃣ Խնդրի ներկայացում -->
-    <section class="problems">
-        <div class="container">
-            <h2>Ձեր հոտի խնդիրները</h2>
-            <div class="problems-grid">
-                <div class="problem-card">
-                    <h3>Անհաճույթ երկարաձգվող հոտ</h3>
-                    <p>Ձեր հոտը չի երկարաձգվում երկար ժամանակ</p>
-                </div>
-                <div class="problem-card">
-                    <h3>Չհամապատասխանող ոճ</h3>
-                    <p>Հոտերը չեն համապատասխանում ձեր ոճին</p>
-                </div>
-                <div class="problem-card">
-                    <h3>Բարձր գներ</h3>
-                    <p>Բարձր գներ բացառիկ որակի համար</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 3️⃣ Առավելություններ -->
-    <section class="benefits">
-        <div class="container">
-            <h2>Ինչու ենք մենք տարբեր</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3>Երկարաձգվող հոտ</h3>
-                    <p>Հոտը հետևում է ձեզ ամբողջ օրվա ընթացքում (մինչև 12 ժամ)</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>Բնական բաղադրիչներ</h3>
-                    <p>Ամբողջությամբ բնական բուսական հավելվածներ</p>
-                </div>
-                <div class="benefit-card">
-                    <h3>Էլեգանտ դիզայն</h3>
-                    <p>Համաշխարհային դիզայն՝ որպեսզի հարմար լինի բոլոր սեզոններին</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- LOADER -->
 
-    <!-- 4️⃣ Ապրանքի features -->
-    <section class="features">
-        <div class="container">
-            <h2>Հոտի հատկանիշներ</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Հիմնական բաղադրիչներ</h3>
-                    <p>Վարդ, սանդալենի երկաթ, ցիտրուսային նոտեր և արոմատիկ բուսական հավելվածներ</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Երկարաձգվող հոտ</h3>
-                    <p>Հոտը երկարաձգվում է մինչև 12 ժամ՝ ապահովելով հաճույք ամբողջ օրվա ընթացքում</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="loader">
 
-    <!-- 5️⃣ Social Proof -->
-    <section class="social-proof">
-        <div class="container">
-            <h2>Հաճախորդների կարծիքներ</h2>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p>"Հոմմ Ա Լա Ռոզը դարձավ իմ սերունդների հոտը: Հաճույք է ստանում ամեն անգամ, երբ օգտագործում եմ"</p>
-                    <div class="name">Արամ Պետրոսյան</div>
-                    <div class="stars">★★★★★</div>
-                </div>
-                <div class="testimonial">
-                    <p>"Տարբերվում է հոտով և դիզայնով: Հաճախ եմ ստանում հարցումներ իմ հոտի մասին"</p>
-                    <div class="name">Գոհար Հակոբյան</div>
-                    <div class="stars">★★★★★</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="loader-logo">
+MFK
+</div>
 
-    <!-- 6️⃣ Offer -->
-    <section class="offer" id="offer">
-        <div class="container">
-            <h2>Հատուկ առաջարկ</h2>
-            <div class="price">15,000 դրամ</div>
-            <div class="discount">10% զեղչ հանգստյան օրերի համար</div>
-            <a href="#" class="btn">Գնել հիմի</a>
-            <div class="offer-details">
-                <p>Ներառված է: 70մլ հոտ, գեղեցիկ հավելված գույնավորված պարագա, անվճար տանում</p>
-            </div>
-        </div>
-    </section>
+</div>
 
-    <!-- 7️⃣ Competitor Comparison -->
-    <section class="comparison">
-        <div class="container">
-            <h2>Համեմատություն կոնկուրենտների հետ</h2>
-            <table>
-                <tr>
-                    <th>Հատկանիշ</th>
-                    <th>Հոմմ Ա Լա Ռոզ</th>
-                    <th>Կոնկուրենտ</th>
-                </tr>
-                <tr>
-                    <td>Երկարաձգվող հոտ</td>
-                    <td class="check">✓ 12 ժամ</td>
-                    <td>✗ 6 ժամ</td>
-                </tr>
-                <tr>
-                    <td>Բնական բաղադրիչներ</td>
-                    <td class="check">✓ 100% բնական</td>
-                    <td>✗ Սինթետիկ</td>
-                </tr>
-                <tr>
-                    <td>Դիզայն</td>
-                    <td class="check">✓ Էլեգանտ և ժամանակակից</td>
-                    <td>✗ Стандарт</td>
-                </tr>
-            </table>
-        </div>
-    </section>
 
-    <!-- 8️⃣ FAQ -->
-    <section class="faq">
-        <div class="container">
-            <h2>Հաճախ տրվող հարցեր</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>Ինչպե՞ս է հոտը երկարաձգվում:</h3>
-                    <p>Հոտը երկարաձգվում է մինչև 12 ժամ՝ օգտագործելով բնական բուսական հավելվածներ</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Կա՞ հավելված գույնավորված պարագա:</h3>
-                    <p>Այո, յուրաքանչյուր գնում ներառում է գեղեցիկ հավելված գույնավորված պարագա</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Ինչպե՞ս է հոտը համապատասխանում տարբեր սեզոնների:</h3>
-                    <p>Հոտը համապատասխանում է բոլոր սեզոններին՝ օգտագործելով բնական բուսական հավելվածներ</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Ինչպե՞ս եմ կարող վերադարձնել ապրանքը:</h3>
-                    <p>Գործում ենք 30-օրյա վերադարձի գարանտիայով՝ առանց հարցերի</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 9️⃣ Final CTA -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Գնել հիմի և ստանալ 10% զեղչ</h2>
-            <p>Հայտնաբերեք ձեր հոտը հետևյալ առաջարկով և ստանալ երկարաձգվող հոտ բացառիկ որակով</p>
-            <a href="#" class="btn">Գնել հիմի</a>
-        </div>
-    </section>
+<!-- NAVIGATION -->
 
-    <script>
-        // Simple smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+<header>
+
+<nav>
+
+<div class="logo">
+HOMME À LA ROSE
+</div>
+
+
+<ul>
+
+<li><a href="#story">Story</a></li>
+
+<li><a href="#benefits">Benefits</a></li>
+
+<li><a href="#reviews">Reviews</a></li>
+
+<li><a href="#offer">Order</a></li>
+
+</ul>
+
+
+<div class="menu">
+☰
+</div>
+
+
+</nav>
+
+</header>
+
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+<div class="hero-content reveal">
+
+
+<span>
+MAISON FRANCIS KURKDJIAN
+</span>
+
+
+<h1>
+
+Homme
+<br>
+
+à la Rose
+
+</h1>
+
+
+<p>
+
+A modern masculine fragrance.
+A powerful expression of freshness,
+confidence and timeless elegance.
+
+</p>
+
+
+<a href="#offer" class="gold-btn">
+
+DISCOVER NOW
+
+</a>
+
+
+</div>
+
+
+
+<div class="hero-image reveal">
+
+
+<img src="https://cdn.shopify.com/s/files/1/1021/7937/3424/files/3700559609989_HOMME_A_LA_ROSE_EDT_70ML_1.webp?v=1781276182">
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<!-- TRUST -->
+
+
+<section class="trust">
+
+
+<div>
+
+<h3>★★★★★</h3>
+
+<p>
+Premium French fragrance
+</p>
+
+</div>
+
+
+<div>
+
+<h3>70 ML</h3>
+
+<p>
+Eau de Toilette
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Luxury</h3>
+
+<p>
+Signature scent
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- STORY -->
+
+
+<section id="story" class="story reveal">
+
+
+<h2>
+
+The Art Of A Modern Rose
+
+</h2>
+
+
+<p>
+
+Homme à la Rose redefines the rose fragrance.
+Fresh citrus notes meet elegant roses and warm woody accords,
+creating a scent designed for men with character.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+<!-- PROBLEM -->
+
+
+<section class="dark-section">
+
+
+<h2 class="reveal">
+
+Why ordinary fragrances fail
+
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card reveal">
+
+<h3>
+01
+</h3>
+
+<h4>
+No identity
+</h4>
+
+<p>
+Most fragrances disappear and feel ordinary.
+</p>
+
+</div>
+
+
+
+<div class="card reveal">
+
+<h3>
+02
+</h3>
+
+<h4>
+Weak impression
+</h4>
+
+<p>
+A scent should be remembered, not forgotten.
+</p>
+
+</div>
+
+
+
+<div class="card reveal">
+
+<h3>
+03
+</h3>
+
+<h4>
+No luxury feeling
+</h4>
+
+<p>
+Your fragrance represents your lifestyle.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- BENEFITS -->
+
+
+<section id="benefits">
+
+
+<h2 class="reveal">
+
+Why choose Homme à la Rose
+
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card reveal">
+
+<div class="icon">
+🌹
+</div>
+
+<h3>
+Unique Rose
+</h3>
+
+<p>
+A masculine interpretation of fresh roses.
+</p>
+
+</div>
+
+
+
+<div class="card reveal">
+
+<div class="icon">
+✨
+</div>
+
+<h3>
+Premium Quality
+</h3>
+
+<p>
+Created with luxury fragrance expertise.
+</p>
+
+</div>
+
+
+
+
+<div class="card reveal">
+
+<div class="icon">
+🔥
+</div>
+
+<h3>
+Memorable Presence
+</h3>
+
+<p>
+Leaves an elegant signature wherever you go.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- PRODUCT IMAGE -->
+
+
+<section class="product-showcase reveal">
+
+
+<img src="https://cdn.shopify.com/s/files/1/1021/7937/3424/files/ALR-26_HARL_SOLO_ALL_triptych_square_desktop_mobile_1080x1080_1a9e0cca-91bb-44ea-9201-c7a9f4ad4ead.webp?v=1781276150">
+
+
+</section>
+
+
+
+
+
+
+
+<!-- FEATURES -->
+
+
+<section>
+
+
+<h2 class="reveal">
+
+Fragrance Journey
+
+</h2>
+
+
+
+<div class="timeline">
+
+
+<div>
+<h3>Top Notes</h3>
+<p>
+Fresh citrus opening.
+</p>
+</div>
+
+
+
+<div>
+<h3>Heart Notes</h3>
+<p>
+Elegant Bulgarian rose character.
+</p>
+</div>
+
+
+
+<div>
+<h3>Base Notes</h3>
+<p>
+Warm woody masculine finish.
+</p>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- REVIEWS -->
+
+
+<section id="reviews" class="reviews">
+
+
+<h2>
+Customer Experiences
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="review reveal">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"The most elegant fragrance I have ever owned."
+</p>
+
+<strong>
+Arman
+</strong>
+
+</div>
+
+
+
+<div class="review reveal">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+"Luxury, freshness and confidence in one bottle."
+</p>
+
+<strong>
+David
+</strong>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- OFFER -->
+
+
+<section id="offer" class="offer">
+
+
+<h2>
+
+Limited Luxury Offer
+
+</h2>
+
+
+
+<div class="price">
+
+€145
+
+</div>
+
+
+<p>
+
+Includes:
+<br>
+✔ Homme à la Rose 70ml
+<br>
+✔ Premium packaging
+<br>
+✔ Fast delivery
+
+</p>
+
+
+
+<div class="countdown">
+
+<span id="timer">
+24:00:00
+</span>
+
+</div>
+
+
+
+<a href="#" class="gold-btn">
+
+ORDER NOW
+
+</a>
+
+
+</section>
+
+
+
+
+
+
+<!-- FAQ -->
+
+
+<section class="faq">
+
+
+<h2>
+FAQ
+</h2>
+
+
+<div class="faq-box">
+
+<h3>
+How long does the fragrance last?
+</h3>
+
+<p>
+Depends on skin type but creates a lasting impression.
+</p>
+
+</div>
+
+
+<div class="faq-box">
+
+<h3>
+Is it suitable for daily use?
+</h3>
+
+<p>
+Yes, perfect for everyday and special occasions.
+</p>
+
+</div>
+
+
+
+<div class="faq-box">
+
+<h3>
+Who is it for?
+</h3>
+
+<p>
+For men who appreciate elegance and uniqueness.
+</p>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<!-- FINAL CTA -->
+
+
+<footer>
+
+
+<h1>
+
+Your signature scent awaits.
+
+</h1>
+
+
+<p>
+
+Experience Homme à la Rose today.
+
+</p>
+
+
+<a href="#offer" class="gold-btn">
+
+GET YOURS
+
+</a>
+
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>
+```
