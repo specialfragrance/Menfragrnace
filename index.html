@@ -3,380 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Հոմմե Ա Լա Ռոզ | Հատուկ Բույրեր</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Հոմմ Ա Լա Ռոզ | Հայտնաբերեք ձեր հոտը</title>
     <style>
-        :root {
-            --primary: #8b5a2b;
-            --secondary: #d4af37;
-            --light: #f8f4f0;
-            --dark: #2c2c2c;
-            --accent: #e07a5f;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
+        :root {
+            --primary: #d4af37;
+            --dark: #1a1a1a;
+            --light: #f8f8f8;
+            --gray: #333333;
+        }
+
         body {
             line-height: 1.6;
-            color: var(--dark);
+            color: var(--gray);
             background-color: var(--light);
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         section {
             padding: 80px 0;
         }
-        
+
         h1, h2, h3 {
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 20px;
         }
-        
+
         .btn {
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 14px 32px;
-            border-radius: 30px;
+            padding: 15px 40px;
             text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             transition: all 0.3s ease;
-            border: 2px solid var(--primary);
+            text-align: center;
+            border: none;
             cursor: pointer;
-            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
-        
+
         .btn:hover {
-            background: transparent;
-            color: var(--primary);
+            background: #b8860b;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
         }
-        
-        .btn-accent {
-            background: var(--accent);
-            border-color: var(--accent);
+
+        .text-center {
+            text-align: center;
         }
-        
-        .btn-accent:hover {
-            color: var(--accent);
-        }
-        
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.shopify.com/s/files/1/1021/7937/3424/files/ALR-26_HARL_SOLO_ALL_triptych_square_desktop_mobile_1080x1080_1a9e0cca-91bb-44ea-9201-c7a9f4ad4ead.webp?v=1781276150') center/cover no-repeat;
             height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://cdn.shopify.com/s/files/1/1021/7937/3424/files/ALR-26_HARL_SOLO_ALL_triptych_square_desktop_mobile_1080x1080_1a9e0cca-91bb-44ea-9201-c7a9f4ad4ead.webp?v=1781276150') no-repeat center center/cover;
             display: flex;
             align-items: center;
-            text-align: center;
+            justify-content: center;
             color: white;
             position: relative;
+            text-align: center;
         }
-        
+
         .hero-content {
             max-width: 800px;
-            margin: 0 auto;
+            z-index: 1;
         }
-        
+
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 20px;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-        
+
         .hero p {
             font-size: 1.8rem;
             margin-bottom: 40px;
+            opacity: 0.9;
         }
-        
-        /* Problem Section */
-        .problem {
-            background-color: white;
+
+        /* Problems Section */
+        .problems h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark);
         }
-        
-        .problem-grid {
+
+        .problems-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
-        .problem-item {
-            background: var(--light);
+
+        .problem-card {
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
-        
-        .problem-item:hover {
+
+        .problem-card:hover {
             transform: translateY(-10px);
         }
-        
-        .problem-item h3 {
+
+        .problem-card h3 {
             font-size: 1.5rem;
-            color: var(--primary);
             margin-bottom: 15px;
+            color: var(--primary);
         }
-        
+
         /* Benefits Section */
-        .benefits {
-            background-color: var(--light);
+        .benefits h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark);
         }
-        
+
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
-        
+
         .benefit-card {
             background: white;
             padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
         }
-        
-        .benefit-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .benefit-icon {
+
+        .benefit-card i {
             font-size: 3rem;
-            color: var(--secondary);
+            color: var(--primary);
             margin-bottom: 20px;
         }
-        
-        /* Features Section */
-        .features {
-            background-color: white;
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
         }
-        
+
+        /* Features Section */
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark);
+            text-align: center;
+        }
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .feature-card {
-            background: var(--light);
+            background: white;
             padding: 30px;
             border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             border-left: 4px solid var(--primary);
         }
-        
+
         .feature-card h3 {
-            color: var(--primary);
+            font-size: 1.5rem;
             margin-bottom: 15px;
+            color: var(--dark);
         }
-        
+
         /* Social Proof */
         .social-proof {
-            background: linear-gradient(to right, var(--light), #f0e6e0);
+            background: var(--dark);
+            color: white;
         }
-        
+
+        .social-proof h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: white;
+        }
+
         .testimonials {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .testimonial {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
         }
-        
-        .testimonial-header {
-            display: flex;
-            align-items: center;
+
+        .testimonial p {
+            font-style: italic;
             margin-bottom: 20px;
+            font-size: 1.1rem;
         }
-        
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 15px;
-            font-size: 1.5rem;
+
+        .testimonial .name {
+            font-weight: 600;
+            color: var(--primary);
         }
-        
+
         .stars {
-            color: #f8d12d;
-            margin-bottom: 10px;
+            color: #ffc107;
+            font-size: 1.2rem;
         }
-        
+
         /* Offer Section */
         .offer {
-            background-color: var(--light);
+            background: linear-gradient(to right, #f5f7fa 0%, #e4edf5 100%);
             text-align: center;
         }
-        
-        .price-box {
-            display: inline-block;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
+
+        .offer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
         }
-        
+
         .price {
-            font-size: 5rem;
-            font-weight: 800;
+            font-size: 4rem;
+            font-weight: 700;
             color: var(--primary);
             margin: 20px 0;
         }
-        
+
         .discount {
-            background: var(--accent);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 30px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: #e74c3c;
+            font-weight: 600;
+            margin-bottom: 30px;
         }
-        
-        .included {
-            list-style: none;
-            margin: 30px 0;
+
+        .offer-details {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
         }
-        
-        .included li {
-            padding: 10px 0;
-            border-bottom: 1px dashed #ddd;
-            display: flex;
-            align-items: center;
-        }
-        
-        .included li i {
-            color: var(--secondary);
-            margin-right: 10px;
-        }
-        
+
         /* Comparison Section */
-        .comparison {
-            background-color: white;
+        .comparison h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark);
+            text-align: center;
         }
-        
-        .comparison-table {
+
+        table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 30px;
         }
-        
-        .comparison-table th {
-            background: var(--primary);
-            color: white;
+
+        th, td {
             padding: 15px;
             text-align: left;
+            border-bottom: 1px solid #ddd;
         }
-        
-        .comparison-table td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
+
+        th {
+            background: var(--dark);
+            color: white;
+            font-weight: 600;
         }
-        
-        .comparison-table tr:nth-child(even) {
+
+        tr:nth-child(even) {
             background: #f9f9f9;
         }
-        
+
         .check {
-            color: #4caf50;
-            font-size: 1.5rem;
+            color: #28a745;
+            font-weight: bold;
         }
-        
+
         /* FAQ Section */
-        .faq {
-            background: linear-gradient(to right, var(--light), #f0e6e0);
+        .faq h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark);
+            text-align: center;
         }
-        
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         .faq-item {
             background: white;
-            margin-bottom: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary);
         }
-        
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .faq-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
         }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .faq-answer.show {
-            max-height: 200px;
-            padding: 0 20px 20px;
-        }
-        
-        .faq-toggle {
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-        }
-        
-        .faq-item.active .faq-toggle {
-            transform: rotate(180deg);
-        }
-        
+
         /* Final CTA */
         .final-cta {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://cdn.shopify.com/s/files/1/1021/7937/3424/files/3700559609989_HOMME_A_LA_ROSE_EDT_70ML_1.webp?v=1781276182') center/cover no-repeat;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
+            background: linear-gradient(135deg, var(--dark) 0%, #111 100%);
             color: white;
-            position: relative;
+            text-align: center;
+            padding: 100px 0;
         }
-        
+
         .final-cta h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
         }
-        
+
         .final-cta p {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             max-width: 700px;
             margin: 0 auto 30px;
+            opacity: 0.9;
         }
-        
-        /* Responsive */
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -386,281 +355,191 @@
                 font-size: 1.3rem;
             }
             
-            .price {
-                font-size: 3.5rem;
+            .btn {
+                padding: 12px 30px;
+                font-size: 1rem;
             }
             
-            .final-cta h2 {
-                font-size: 2.2rem;
-            }
-            
-            .final-cta p {
-                font-size: 1.2rem;
+            h1, h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- Hero Block -->
     <section class="hero">
+        <div class="container hero-content">
+            <h1>Հայտնաբերեք ձեր հոտը՝ Հոմմ Ա Լա Ռոզ</h1>
+            <p>Բացառիկ հոտ, որը հետևում է ձեզ ամբողջ օրվա ընթացքում</p>
+            <a href="#offer" class="btn">Գնել հիմի</a>
+        </div>
+    </section>
+
+    <!-- 2️⃣ Խնդրի ներկայացում -->
+    <section class="problems">
         <div class="container">
-            <div class="hero-content">
-                <h1>Ձեր Հատուկ Բույրը Հիմա</h1>
-                <p>Համարձակվեք ստեղծել ձեր անհատական բույրը բնական բաղադրիչներով</p>
-                <a href="#offer" class="btn">Գնել Այժմ</a>
+            <h2>Ձեր հոտի խնդիրները</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>Անհաճույթ երկարաձգվող հոտ</h3>
+                    <p>Ձեր հոտը չի երկարաձգվում երկար ժամանակ</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Չհամապատասխանող ոճ</h3>
+                    <p>Հոտերը չեն համապատասխանում ձեր ոճին</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Բարձր գներ</h3>
+                    <p>Բարձր գներ բացառիկ որակի համար</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="problem">
-        <div class="container">
-            <h2>Ձեր Հիմնական Ցավոտ Կետերը</h2>
-            <div class="problem-grid">
-                <div class="problem-item">
-                    <h3>Համապատասխանության բացակայություն</h3>
-                    <p>Չգտնում եք բույր, որը համապատասխանում է ձեր ոճին և երեկոյան դեպքերին:</p>
-                </div>
-                <div class="problem-item">
-                    <h3>Երկարատևության խնդիր</h3>
-                    <p>Ձեր ընտրած բույրերը երկար ժամանակ չեն տևում, որոնք արագ են ելնում:</p>
-                </div>
-                <div class="problem-item">
-                    <h3>Բարդ ընտրություն</h3>
-                    <p>Շատ դժվար է ընտրել բույր առանց հասկանալու, թե ինչպես կհնչի ձեր մարմնի վրա:</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
+    <!-- 3️⃣ Առավելություններ -->
     <section class="benefits">
         <div class="container">
-            <h2>Առավելություններ</h2>
+            <h2>Ինչու ենք մենք տարբեր</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Բնական Բաղադրիչներ</h3>
-                    <p>Մեր բույրերը պատրաստված են բնական բաղադրիչներից առանց քիմիական նյութերի:</p>
+                    <h3>Երկարաձգվող հոտ</h3>
+                    <p>Հոտը հետևում է ձեզ ամբողջ օրվա ընթացքում (մինչև 12 ժամ)</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Երկարատև Տևողություն</h3>
-                    <p>Մեր բույրերը տևում են մինչև 24 ժամ ձեր մարմնի վրա:</p>
+                    <h3>Բնական բաղադրիչներ</h3>
+                    <p>Ամբողջությամբ բնական բուսական հավելվածներ</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Հատուկ Համադրություն</h3>
-                    <p>Հնարավորություն ունեք ստեղծել ձեր հատուկ բույրը համաձայն ձեր համար համապատասխանող բաղադրիչների:</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-umbrella-beach"></i>
-                    </div>
-                    <h3>Բոլոր Սեզոնների Համար</h3>
-                    <p>Ձեր բույրը համապատասխանում է բոլոր սեզոններին և դեպքերին:</p>
+                    <h3>Էլեգանտ դիզայն</h3>
+                    <p>Համաշխարհային դիզայն՝ որպեսզի հարմար լինի բոլոր սեզոններին</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- 4️⃣ Ապրանքի features -->
     <section class="features">
         <div class="container">
-            <h2>Ապրանքի Հատկություններ</h2>
+            <h2>Հոտի հատկանիշներ</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Հատուկ Համադրություն</h3>
-                    <p>Մեր համակարգը թույլ է տալիս ձեզ ստեղծել բույր ձեր համար համապատասխանող բաղադրիչներից, որոնք համապատասխանում են ձեր ոճին:</p>
+                    <h3>Հիմնական բաղադրիչներ</h3>
+                    <p>Վարդ, սանդալենի երկաթ, ցիտրուսային նոտեր և արոմատիկ բուսական հավելվածներ</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Երկարատև Տևողություն</h3>
-                    <p>Մեր բույրերը պատրաստված են հատուկ տեխնոլոգիայով, որը երաշխավորում է երկարատև տևողություն մինչև 24 ժամ:</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Բնական Բաղադրիչներ</h3>
-                    <p>Մեր բույրերը պատրաստված են բնական բաղադրիչներից առանց քիմիական նյութերի, որոնք վնասում են մաշկին:</p>
+                    <h3>Երկարաձգվող հոտ</h3>
+                    <p>Հոտը երկարաձգվում է մինչև 12 ժամ՝ ապահովելով հաճույք ամբողջ օրվա ընթացքում</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof -->
+    <!-- 5️⃣ Social Proof -->
     <section class="social-proof">
         <div class="container">
-            <h2>Հաճախորդների Կարծիքներ</h2>
+            <h2>Հաճախորդների կարծիքներ</h2>
             <div class="testimonials">
                 <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">ՀՀ</div>
-                        <div>
-                            <h3>Հայկ Հովհաննիսյան</h3>
-                            <p>Հաճախորդ 2 տարի</p>
-                        </div>
-                    </div>
-                    <p>«Այս բույրը ամենալավն է, որ ես երբևէ օգտագործել եմ: Երկարատև է և համապատասխանում է բոլոր դեպքերին»</p>
+                    <p>"Հոմմ Ա Լա Ռոզը դարձավ իմ սերունդների հոտը: Հաճույք է ստանում ամեն անգամ, երբ օգտագործում եմ"</p>
+                    <div class="name">Արամ Պետրոսյան</div>
+                    <div class="stars">★★★★★</div>
                 </div>
                 <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">ԱՊ</div>
-                        <div>
-                            <h3>Աննա Պետրոսյան</h3>
-                            <p>Հաճախորդ 1 տարի</p>
-                        </div>
-                    </div>
-                    <p>«Շատ հեշտ է ստեղծել իմ հատուկ բույրը: Բացի այդ, բնական բաղադրիչների պատճառով չեմ զգում մաշկի խանգարում»</p>
+                    <p>"Տարբերվում է հոտով և դիզայնով: Հաճախ եմ ստանում հարցումներ իմ հոտի մասին"</p>
+                    <div class="name">Գոհար Հակոբյան</div>
+                    <div class="stars">★★★★★</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Offer Section -->
+    <!-- 6️⃣ Offer -->
     <section class="offer" id="offer">
         <div class="container">
-            <h2>Հատուկ Առաջարկ</h2>
-            <div class="price-box">
-                <div class="discount">20% Զեղչ</div>
-                <div class="price">15,000 դրամ</div>
-                <p>Հասանելի է միայն այսօր</p>
-                
-                <ul class="included">
-                    <li><i class="fas fa-check"></i> 70ml բույրի բուտյլ</li>
-                    <li><i class="fas fa-check"></i> Հատուկ համադրության գիդ</li>
-                    <li><i class="fas fa-check"></i> Անվճար առաքում ՀՀ-ում</li>
-                    <li><i class="fas fa-check"></i> 30 օրվա վերադարձման երաշխիք</li>
-                </ul>
-                
-                <a href="#final-cta" class="btn btn-accent">Գնել Այժմ</a>
+            <h2>Հատուկ առաջարկ</h2>
+            <div class="price">15,000 դրամ</div>
+            <div class="discount">10% զեղչ հանգստյան օրերի համար</div>
+            <a href="#" class="btn">Գնել հիմի</a>
+            <div class="offer-details">
+                <p>Ներառված է: 70մլ հոտ, գեղեցիկ հավելված գույնավորված պարագա, անվճար տանում</p>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
+    <!-- 7️⃣ Competitor Comparison -->
     <section class="comparison">
         <div class="container">
-            <h2>Մեր Ապրանքը Համեմատած Կոնկուրենտների Հետ</h2>
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Հատկություն</th>
-                        <th>Հոմմե Ա Լա Ռոզ</th>
-                        <th>Կոնկուրենտներ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Երկարատևություն</td>
-                        <td><i class="fas fa-check check"></i> 24 ժամ</td>
-                        <td><i class="fas fa-times"></i> 8-12 ժամ</td>
-                    </tr>
-                    <tr>
-                        <td>Բնական բաղադրիչներ</td>
-                        <td><i class="fas fa-check check"></i> 100%</td>
-                        <td><i class="fas fa-times"></i> 50-70%</td>
-                    </tr>
-                    <tr>
-                        <td>Հատուկ համադրություն</td>
-                        <td><i class="fas fa-check check"></i> Այո</td>
-                        <td><i class="fas fa-times"></i> Ոչ</td>
-                    </tr>
-                    <tr>
-                        <td>Անվճար առաքում</td>
-                        <td><i class="fas fa-check check"></i> Այո</td>
-                        <td><i class="fas fa-times"></i> Տարածքային</td>
-                    </tr>
-                </tbody>
+            <h2>Համեմատություն կոնկուրենտների հետ</h2>
+            <table>
+                <tr>
+                    <th>Հատկանիշ</th>
+                    <th>Հոմմ Ա Լա Ռոզ</th>
+                    <th>Կոնկուրենտ</th>
+                </tr>
+                <tr>
+                    <td>Երկարաձգվող հոտ</td>
+                    <td class="check">✓ 12 ժամ</td>
+                    <td>✗ 6 ժամ</td>
+                </tr>
+                <tr>
+                    <td>Բնական բաղադրիչներ</td>
+                    <td class="check">✓ 100% բնական</td>
+                    <td>✗ Սինթետիկ</td>
+                </tr>
+                <tr>
+                    <td>Դիզայն</td>
+                    <td class="check">✓ Էլեգանտ և ժամանակակից</td>
+                    <td>✗ Стандарт</td>
+                </tr>
             </table>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- 8️⃣ FAQ -->
     <section class="faq">
         <div class="container">
-            <h2>Հաճախ Տրվող Հարցեր</h2>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Ինչպե՞ս է աշխատում հատուկ համադրության համակարգը:
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+            <h2>Հաճախ տրվող հարցեր</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Ինչպե՞ս է հոտը երկարաձգվում:</h3>
+                    <p>Հոտը երկարաձգվում է մինչև 12 ժամ՝ օգտագործելով բնական բուսական հավելվածներ</p>
                 </div>
-                <div class="faq-answer">
-                    <p>Ձեզ տրամադրվում է հատուկ գիդ, որտեղ կարող եք ընտրել ձեր համար համապատասխանող բաղադրիչները: Այնուհետև մենք պատրաստում ենք ձեր հատուկ բույրը:</p>
+                <div class="faq-item">
+                    <h3>Կա՞ հավելված գույնավորված պարագա:</h3>
+                    <p>Այո, յուրաքանչյուր գնում ներառում է գեղեցիկ հավելված գույնավորված պարագա</p>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Որքա՞ն է առաքման ժամանակը:
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                <div class="faq-item">
+                    <h3>Ինչպե՞ս է հոտը համապատասխանում տարբեր սեզոնների:</h3>
+                    <p>Հոտը համապատասխանում է բոլոր սեզոններին՝ օգտագործելով բնական բուսական հավելվածներ</p>
                 </div>
-                <div class="faq-answer">
-                    <p>Առաքումը տեղի է ունենում 2-3 աշխատանքային օրվա ընթացքում ՀՀ-ում և 5-7 օրվա ընթացքում երկրներում:</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Կարո՞ղ եմ վերադարձնել ապրանքը:
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>Այո, եթե ձեզ հաճույք չէ պատճառում բույրը, կարող եք վերադարձնել այն 30 օրվա ընթացքում առանց հարցերի:</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Ինչպե՞ս եմ հասկանում, թե որ բաղադրիչները են համապատասխանում ինձ:
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </div>
-                <div class="faq-answer">
-                    <p>Գիդում կան հատուկ հարցազրույցներ, որոնք օգնում են հասկանալ, թե որ բաղադրիչներն են համապատասխանում ձեր ոճին և համարձակությանը:</p>
+                <div class="faq-item">
+                    <h3>Ինչպե՞ս եմ կարող վերադարձնել ապրանքը:</h3>
+                    <p>Գործում ենք 30-օրյա վերադարձի գարանտիայով՝ առանց հարցերի</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta" id="final-cta">
+    <!-- 9️⃣ Final CTA -->
+    <section class="final-cta">
         <div class="container">
-            <h2>Համարձակվեք Ձեր Հատուկ Բույրը Ստեղծել</h2>
-            <p>Հասանելի է միայն այսօր հետ դրամային գործարքով և անվճար առաքումով:</p>
-            <a href="#offer" class="btn">Գնել Այժմ</a>
+            <h2>Գնել հիմի և ստանալ 10% զեղչ</h2>
+            <p>Հայտնաբերեք ձեր հոտը հետևյալ առաջարկով և ստանալ երկարաձգվող հոտ բացառիկ որակով</p>
+            <a href="#" class="btn">Գնել հիմի</a>
         </div>
     </section>
 
     <script>
-        function toggleFaq(element) {
-            const faqItem = element.closest('.faq-item');
-            const answer = faqItem.querySelector('.faq-answer');
-            const toggle = element.querySelector('.faq-toggle');
-            
-            faqItem.classList.toggle('active');
-            
-            if (faqItem.classList.contains('active')) {
-                answer.classList.add('show');
-                toggle.innerHTML = '<i class="fas fa-chevron-up"></i>';
-            } else {
-                answer.classList.remove('show');
-                toggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
-            }
-        }
+        // Simple smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
