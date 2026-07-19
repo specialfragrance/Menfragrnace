@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maison Francis Kurkdjian | Exclusive Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
             --gold: #C5A059;
-            --dark: #111;
-            --light: #f4f4f4;
-            --red-mfk: #8a1c1c;
+            --black: #0a0a0a;
+            --white: #fff;
+            --cream: #f8f6f0;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--light);
-            color: var(--dark);
+            background: var(--cream);
+            color: var(--black);
             overflow-x: hidden;
         }
 
@@ -30,187 +30,409 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 5%;
+            padding: 25px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            z-index: 100;
+            background: rgba(248, 246, 240, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             text-transform: uppercase;
         }
 
-        .cart-icon {
-            font-size: 14px;
-            cursor: pointer;
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
         }
+
+        .nav-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
 
         /* Hero Section */
         .hero {
-            height: 90vh;
-            background: url('https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            background: linear-gradient(135deg, #f8f6f0 0%, #e8e4d8 100%);
             position: relative;
+            overflow: hidden;
         }
 
-        .hero::after {
+        .hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.3); opacity: 0.8; }
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            color: white;
-            animation: fadeIn 1.5s ease;
+            animation: fadeInUp 1.5s ease;
         }
 
-        .hero h1 {
-            font-size: 80px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: 5px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Products Grid */
+        .hero h1 {
+            font-size: 96px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.4s;
+            z-index: -1;
+        }
+
+        .hero-btn:hover {
+            color: var(--black);
+        }
+
+        .hero-btn:hover::before {
+            left: 0;
+        }
+
+        /* Collection Section */
         .collection {
-            padding: 100px 5%;
+            padding: 120px 50px;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .section-header h2 {
+            font-size: 56px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 48px;
-            margin-bottom: 80px;
-            font-weight: 300;
-            color: var(--dark);
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 60px;
-        }
-
         .product-card {
-            background: white;
-            border-radius: 4px;
+            background: var(--cream);
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transition: all 0.4s ease;
             cursor: pointer;
         }
 
         .product-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
         }
 
-        .card-image {
+        .product-visual {
             height: 450px;
-            width: 100%;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
+        /* Baccarat Rouge 540 - Red/Gold */
+        .baccarat {
+            background: linear-gradient(135deg, #8a1c1c 0%, #c44545 50%, #C5A059 100%);
         }
 
-        .product-card:hover .card-image img {
-            transform: scale(1.1);
+        /* Grand Soir - Amber/Gold */
+        .grand-soir {
+            background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #8B6914 100%);
         }
 
-        .card-details {
-            padding: 30px;
+        /* Oud Satin Mood - Purple/Black */
+        .oud-satin {
+            background: linear-gradient(135deg, #2c1810 0%, #4a2c2a 50%, #1a0f0f 100%);
+        }
+
+        /* Aqua Universalis - White/Blue */
+        .aqua {
+            background: linear-gradient(135deg, #e8f4f8 0%, #b8d4e0 50%, #8ab4c4 100%);
+        }
+
+        /* À la Rose - Pink/Rose */
+        .a-la-rose {
+            background: linear-gradient(135deg, #f5e6e8 0%, #e8b4b8 50%, #d4999d 100%);
+        }
+
+        .bottle-silhouette {
+            width: 120px;
+            height: 280px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px 10px 5px 5px;
+            position: relative;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .bottle-silhouette {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .bottle-silhouette::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+        }
+
+        .product-info {
+            padding: 40px 30px;
             text-align: center;
+            background: var(--white);
         }
 
-        .card-details h3 {
-            font-size: 28px;
+        .product-info h3 {
+            font-size: 32px;
+            font-weight: 400;
             margin-bottom: 10px;
-            color: var(--dark);
+            color: var(--black);
         }
 
-        .card-details .type {
-            font-size: 12px;
-            color: var(--gold);
-            text-transform: uppercase;
+        .product-type {
+            font-size: 11px;
             letter-spacing: 2px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .card-details .price {
-            font-size: 20px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .btn-buy {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            border: 1px solid var(--dark);
-            color: var(--dark);
-            text-decoration: none;
-            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            color: var(--black);
+        }
+
+        .product-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            border: 1px solid var(--black);
+            color: var(--black);
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             transition: all 0.3s;
         }
 
-        .btn-buy:hover {
-            background: var(--dark);
-            color: white;
+        .product-btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* Featured Section */
+        .featured {
+            padding: 150px 50px;
+            background: var(--black);
+            color: var(--white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .featured-visual {
+            height: 600px;
+            background: linear-gradient(135deg, #8a1c1c 0%, #c44545 50%, #C5A059 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-visual::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .featured-bottle {
+            width: 150px;
+            height: 350px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px 12px 6px 6px;
+            position: relative;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+
+        .featured-bottle::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 6px;
+        }
+
+        .featured-content h2 {
+            font-size: 64px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: var(--gold);
+        }
+
+        .featured-content p {
+            font-size: 16px;
+            line-height: 2;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .featured-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .featured-btn:hover {
+            background: var(--white);
+            transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
+            background: var(--cream);
+            padding: 60px 50px;
             text-align: center;
-            padding: 50px 20px;
-            margin-top: 100px;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         footer p {
             font-size: 12px;
-            opacity: 0.6;
+            color: #999;
             letter-spacing: 1px;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
             .hero h1 { font-size: 48px; }
-            .product-grid { grid-template-columns: 1fr; }
+            .featured { grid-template-columns: 1fr; gap: 50px; }
+            .products-grid { grid-template-columns: 1fr; }
+            nav { padding: 20px 30px; }
+            .nav-links { gap: 20px; }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -218,80 +440,153 @@
 
     <nav>
         <div class="logo">Maison FK</div>
-        <div class="cart-icon">Cart (0)</div>
+        <ul class="nav-links">
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#featured">Featured</a></li>
+        </ul>
     </nav>
 
-    <header class="hero">
+    <section class="hero">
         <div class="hero-content">
             <h1>MAISON FRANCIS KURKDJIAN</h1>
             <p>The Art of Perfumery</p>
+            <a href="#collection" class="hero-btn">Discover Collection</a>
         </div>
-    </header>
+    </section>
 
-    <section class="collection">
-        <h2 class="section-title">The Signature Collection</h2>
-        
-        <div class="product-grid">
+    <section class="collection" id="collection">
+        <div class="section-header fade-in">
+            <h2>The Signature Collection</h2>
+            <p>Five Iconic Fragrances</p>
+        </div>
+
+        <div class="products-grid">
             
-            <!-- Product 1: Baccarat Rouge 540 -->
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f53e?w=800&q=80" alt="Baccarat Rouge 540">
+            <!-- Baccarat Rouge 540 -->
+            <div class="product-card fade-in">
+                <div class="product-visual baccarat">
+                    <div class="bottle-silhouette"></div>
                 </div>
-                <div class="card-details">
-                    <span class="type">Extrait de Parfum</span>
+                <div class="product-info">
                     <h3>Baccarat Rouge 540</h3>
-                    <div class="price">$325.00</div>
-                    <a href="#" class="btn-buy">View Details</a>
+                    <div class="product-type">Extrait de Parfum</div>
+                    <p class="product-description">
+                        A luminous amber floral that captures the brilliance of Baccarat crystal.
+                    </p>
+                    <div class="product-price">$325</div>
+                    <a href="#" class="product-btn">Discover</a>
                 </div>
             </div>
 
-            <!-- Product 2: Grand Soir -->
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&q=80" alt="Grand Soir">
+            <!-- Grand Soir -->
+            <div class="product-card fade-in">
+                <div class="product-visual grand-soir">
+                    <div class="bottle-silhouette"></div>
                 </div>
-                <div class="card-details">
-                    <span class="type">Eau de Parfum</span>
+                <div class="product-info">
                     <h3>Grand Soir</h3>
-                    <div class="price">$285.00</div>
-                    <a href="#" class="btn-buy">View Details</a>
+                    <div class="product-type">Eau de Parfum</div>
+                    <p class="product-description">
+                        A warm oriental fragrance capturing the essence of Parisian nights.
+                    </p>
+                    <div class="product-price">$285</div>
+                    <a href="#" class="product-btn">Discover</a>
                 </div>
             </div>
 
-            <!-- Product 3: Oud Satin Mood -->
-            <div class="product-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?w=800&q=80" alt="Oud Satin Mood">
+            <!-- Oud Satin Mood -->
+            <div class="product-card fade-in">
+                <div class="product-visual oud-satin">
+                    <div class="bottle-silhouette"></div>
                 </div>
-                <div class="card-details">
-                    <span class="type">Eau de Parfum</span>
+                <div class="product-info">
                     <h3>Oud Satin Mood</h3>
-                    <div class="price">$310.00</div>
-                    <a href="#" class="btn-buy">View Details</a>
+                    <div class="product-type">Eau de Parfum</div>
+                    <p class="product-description">
+                        A powerful, sensual oud fragrance with violet and vanilla.
+                    </p>
+                    <div class="product-price">$310</div>
+                    <a href="#" class="product-btn">Discover</a>
                 </div>
             </div>
 
-             <!-- Product 4: Aqua Universalis -->
-             <div class="product-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80" alt="Aqua Universalis">
+            <!-- Aqua Universalis -->
+            <div class="product-card fade-in">
+                <div class="product-visual aqua">
+                    <div class="bottle-silhouette"></div>
                 </div>
-                <div class="card-details">
-                    <span class="type">Eau de Parfum</span>
+                <div class="product-info">
                     <h3>Aqua Universalis</h3>
-                    <div class="price">$265.00</div>
-                    <a href="#" class="btn-buy">View Details</a>
+                    <div class="product-type">Eau de Parfum</div>
+                    <p class="product-description">
+                        A fresh, luminous fragrance celebrating purity and lightness.
+                    </p>
+                    <div class="product-price">$265</div>
+                    <a href="#" class="product-btn">Discover</a>
+                </div>
+            </div>
+
+            <!-- À la Rose -->
+            <div class="product-card fade-in">
+                <div class="product-visual a-la-rose">
+                    <div class="bottle-silhouette"></div>
+                </div>
+                <div class="product-info">
+                    <h3>À la Rose</h3>
+                    <div class="product-type">Eau de Parfum</div>
+                    <p class="product-description">
+                        A modern rose fragrance capturing a rose garden at dawn.
+                    </p>
+                    <div class="product-price">$285</div>
+                    <a href="#" class="product-btn">Discover</a>
                 </div>
             </div>
 
         </div>
     </section>
 
+    <section class="featured" id="featured">
+        <div class="featured-visual fade-in">
+            <div class="featured-bottle"></div>
+        </div>
+        <div class="featured-content fade-in">
+            <h2>Baccarat Rouge 540</h2>
+            <p>
+                Born from the encounter between Francis Kurkdjian and the legendary Baccarat crystal house, 
+                this fragrance translates the refined elegance of Baccarat crystal into olfactory terms. 
+                An amber floral that leaves a mineral and faceted trail, like light passing through crystal.
+            </p>
+            <a href="#" class="featured-btn">Shop Now</a>
+        </div>
+    </section>
+
     <footer>
         <p>© 2026 Maison Francis Kurkdjian. All Rights Reserved.</p>
-        <p>This is a concept portfolio page.</p>
     </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Fade in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 
 </body>
 </html>
