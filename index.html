@@ -1,355 +1,1048 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hy">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI Health Hero</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Halant:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Homme à la Rose | Luxury Fragrance</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-:root{
-    --bg:#091814;
-    --accent:#EAF1C1;
-    --glass:rgba(255,255,255,.07);
-    --border:rgba(255,255,255,.12);
+html{
+scroll-behavior:smooth;
 }
 
 body{
-    background:var(--bg);
-    color:white;
-    font-family:Inter,sans-serif;
-    overflow:hidden;
+background:#080808;
+color:white;
+font-family:Inter,sans-serif;
 }
+
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+}
+
+
+section{
+padding:90px 8%;
+}
+
+
+p{
+color:#cfcfcf;
+line-height:1.8;
+}
+
+
+.gold{
+color:#d5ad63;
+}
+
+
+.btn{
+
+display:inline-block;
+padding:16px 40px;
+margin-top:30px;
+
+border:1px solid #d5ad63;
+
+color:white;
+text-decoration:none;
+
+letter-spacing:2px;
+
+transition:.4s;
+
+}
+
+
+.btn:hover{
+
+background:#d5ad63;
+color:#111;
+
+}
+
+
+
+
+/* NAVIGATION */
+
+
+header{
+
+position:fixed;
+top:0;
+width:100%;
+z-index:100;
+
+background:rgba(0,0,0,.5);
+
+backdrop-filter:blur(15px);
+
+}
+
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:25px 8%;
+
+}
+
+
+.logo{
+
+font-family:'Cormorant Garamond';
+font-size:28px;
+color:#d5ad63;
+
+}
+
+
+nav ul{
+
+display:flex;
+gap:30px;
+list-style:none;
+
+}
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+
+}
+
+
+.menu{
+
+display:none;
+
+}
+
+
+
+
+
+/* HERO */
+
 
 .hero{
-    height:100vh;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-}
 
-/* ---------------- LEFT ---------------- */
+min-height:100vh;
 
-.left{
-    padding:90px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    position:relative;
-    z-index:5;
-}
-
-.loader{
-    width:54px;
-    height:54px;
-    border:3px solid rgba(255,255,255,.12);
-    border-top-color:var(--accent);
-    border-radius:50%;
-    animation:spin 2.5s linear infinite;
-    margin-bottom:55px;
-}
-
-@keyframes spin{
-to{transform:rotate(360deg);}
-}
-
-h1{
-    font-family:Halant,serif;
-    font-size:96px;
-    line-height:.95;
-    font-weight:700;
-    letter-spacing:-3px;
-    max-width:620px;
-    margin-bottom:34px;
-}
-
-.word{
-    display:inline-block;
-    opacity:0;
-    transform:translateY(40px);
-    animation:word .9s forwards;
-}
-
-.word:nth-child(1){animation-delay:.2s}
-.word:nth-child(2){animation-delay:.45s}
-.word:nth-child(3){animation-delay:.7s}
-.word:nth-child(4){animation-delay:.95s}
-.word:nth-child(5){animation-delay:1.2s}
-
-@keyframes word{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-.sub{
-    color:rgba(255,255,255,.7);
-    width:500px;
-    font-size:18px;
-    line-height:1.8;
-    margin-bottom:40px;
-}
-
-/* glass form */
-
-.waitlist{
-    display:flex;
-    align-items:center;
-    width:520px;
-    border-radius:100px;
-    backdrop-filter:blur(30px);
-    background:var(--glass);
-    border:1px solid var(--border);
-    overflow:hidden;
-    margin-bottom:42px;
-}
-
-.waitlist input{
-    flex:1;
-    padding:22px 28px;
-    border:none;
-    outline:none;
-    background:transparent;
-    color:white;
-    font-size:16px;
-}
-
-.waitlist input::placeholder{
-    color:#ccc;
-}
-
-.waitlist button{
-    background:var(--accent);
-    color:#091814;
-    border:none;
-    padding:20px 34px;
-    font-weight:700;
-    cursor:pointer;
-}
-
-/* feature tags */
-
-.tags{
 display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
 
-.tag{
-padding:12px 18px;
-border-radius:999px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.09);
-color:var(--accent);
-transform:scale(.4);
-opacity:0;
-animation:tag .7s forwards;
-}
-
-.tag:nth-child(1){animation-delay:1.3s;}
-.tag:nth-child(2){animation-delay:1.55s;}
-.tag:nth-child(3){animation-delay:1.8s;}
-.tag:nth-child(4){animation-delay:2.05s;}
-
-@keyframes tag{
-to{
-transform:scale(1);
-opacity:1;
-}
-}
-
-/* ---------- RIGHT ---------- */
-
-.right{
-position:relative;
-overflow:hidden;
-}
-
-.videoWrap{
-position:absolute;
-inset:0;
-
-clip-path:polygon(100% 0,100% 0,100% 100%,100% 100%);
-animation:curtain 1.7s cubic-bezier(.22,.9,.17,1) forwards;
-}
-
-@keyframes curtain{
-to{
-clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
-}
-}
-
-video{
-width:100%;
-height:100%;
-object-fit:cover;
-filter:saturate(.95) contrast(1.05);
-}
-
-/* overlay */
-
-.overlay{
-position:absolute;
-inset:0;
-background:
-linear-gradient(90deg,#091814 0%,transparent 35%),
-linear-gradient(180deg,transparent 20%,rgba(9,24,20,.5));
-}
-
-/* testimonial */
-
-.card{
-position:absolute;
-bottom:70px;
-left:70px;
-width:330px;
-padding:24px;
-border-radius:24px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(24px);
-border:1px solid rgba(255,255,255,.12);
-animation:float 5s ease-in-out infinite;
-}
-
-.card p{
-font-size:17px;
-line-height:1.6;
-margin-bottom:16px;
-}
-
-.person{
-display:flex;
 align-items:center;
-gap:12px;
+
+justify-content:space-between;
+
+
+background:
+
+radial-gradient(circle at 75%,#44301c,#080808 45%);
+
 }
 
-.avatar{
-width:46px;
-height:46px;
-border-radius:50%;
-background:var(--accent);
+
+
+.hero-text{
+
+max-width:600px;
+
 }
 
-.name{
-font-weight:600;
+
+.hero-text span{
+
+color:#d5ad63;
+letter-spacing:5px;
+
 }
+
+
+.hero h1{
+
+font-size:100px;
+line-height:.9;
+
+margin:25px 0;
+
+}
+
+
+.hero p{
+
+font-size:20px;
+
+}
+
+
+
+.hero img{
+
+width:430px;
+
+filter:drop-shadow(0 40px 50px #000);
+
+animation:float 5s infinite ease-in-out;
+
+}
+
+
 
 @keyframes float{
-0%,100%{
-transform:translateY(0px);
-}
+
 50%{
-transform:translateY(-18px);
-}
-}
 
-@media(max-width:980px){
+transform:translateY(-25px);
 
-.hero{
-grid-template-columns:1fr;
-}
-
-.right{
-position:absolute;
-inset:0;
-z-index:-1;
-opacity:.28;
-}
-
-.left{
-padding:50px 34px;
-}
-
-h1{
-font-size:62px;
-}
-
-.waitlist{
-width:100%;
-}
-
-.sub{
-width:auto;
 }
 
 }
+
+
 
 </style>
+
 </head>
+
+
 <body>
+
+
+<header>
+
+<nav>
+
+<div class="logo">
+HOMME À LA ROSE
+</div>
+
+
+<ul>
+
+<li><a href="#about">Story</a></li>
+
+<li><a href="#benefits">Benefits</a></li>
+
+<li><a href="#offer">Order</a></li>
+
+</ul>
+
+
+<div class="menu">
+☰
+</div>
+
+
+</nav>
+
+</header>
+
+
+
 
 <section class="hero">
 
-<div class="left">
 
-<div class="loader"></div>
+<div class="hero-text">
+
+
+<span>
+MAISON FRANCIS KURKDJIAN
+</span>
+
 
 <h1>
-<span class="word">Predict.</span>
-<span class="word">Prevent.</span>
-<span class="word">Personalize.</span>
-<span class="word">Your</span>
-<span class="word">Health.</span>
+Homme
+<br>
+à la Rose
 </h1>
 
-<p class="sub">
-Next-generation AI health intelligence built to help people understand
-their body earlier, monitor progress continuously, and receive
-personalized wellness guidance.
-</p>
 
-<form class="waitlist">
-<input placeholder="Enter your email">
-<button>Join Waitlist</button>
-</form>
-
-<div class="tags">
-<div class="tag">AI Diagnostics</div>
-<div class="tag">24/7 Monitoring</div>
-<div class="tag">Private by Design</div>
-<div class="tag">Clinician Ready</div>
-</div>
-
-</div>
-
-<div class="right">
-
-<div class="videoWrap">
-
-<video autoplay muted loop playsinline>
-<source src="https://cdn.coverr.co/videos/coverr-doctor-working-on-computer-1565332471776?download=1080p" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-</div>
-
-<div class="card">
 <p>
-"Within weeks our team uncovered health trends we had never been able to
-see before. The AI insights felt proactive instead of reactive."
+
+A modern masculine fragrance where fresh citrus,
+elegant roses and woody notes create a signature
+of confidence.
+
 </p>
 
-<div class="person">
-<div class="avatar"></div>
+
+<a href="#offer" class="btn">
+DISCOVER NOW
+</a>
+
+
+</div>
+
+
+
 <div>
-<div class="name">Dr. Maya Chen</div>
-<div style="opacity:.65;font-size:14px;">Clinical Advisor</div>
-</div>
-</div>
+
+<img src="https://cdn.shopify.com/s/files/1/1021/7937/3424/files/3700559609989_HOMME_A_LA_ROSE_EDT_70ML_1.webp?v=1781276182">
 
 </div>
 
+
+
+</section>
+```
+```html
+<!-- TRUST SECTION -->
+
+<section class="trust">
+
+<div>
+<h2 class="gold">★★★★★</h2>
+<p>Luxury French fragrance</p>
+</div>
+
+<div>
+<h2 class="gold">70 ML</h2>
+<p>Eau de Toilette</p>
+</div>
+
+<div>
+<h2 class="gold">Premium</h2>
+<p>Signature experience</p>
 </div>
 
 </section>
 
+
+
+
+<!-- STORY -->
+
+<section id="about" class="about">
+
+<h2>
+The Art Of A Modern Rose
+</h2>
+
+<p>
+
+Homme à la Rose is a modern interpretation of masculinity.
+Fresh citrus notes blend with elegant rose and woody accords,
+creating a fragrance that represents confidence and style.
+
+</p>
+
+</section>
+
+
+
+
+<!-- BENEFITS -->
+
+<section id="benefits">
+
+<h2>
+Why Choose This Fragrance
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>🌹 Unique Scent</h3>
+
+<p>
+A rare masculine rose composition that stands apart.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>✨ Luxury Quality</h3>
+
+<p>
+Created with premium fragrance expertise.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🔥 Memorable</h3>
+
+<p>
+Leaves an elegant impression wherever you go.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- PRODUCT IMAGE -->
+
+
+<section class="showcase">
+
+<img src="https://cdn.shopify.com/s/files/1/1021/7937/3424/files/ALR-26_HARL_SOLO_ALL_triptych_square_desktop_mobile_1080x1080_1a9e0cca-91bb-44ea-9201-c7a9f4ad4ead.webp?v=1781276150">
+
+</section>
+
+
+
+
+
+
+<!-- FEATURES -->
+
+
+<section class="dark">
+
+
+<h2>
+Fragrance Journey
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>Top Notes</h3>
+
+<p>
+Fresh citrus opening for a powerful first impression.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Heart Notes</h3>
+
+<p>
+Elegant rose essence with refined character.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Base Notes</h3>
+
+<p>
+Warm woody finish for masculine depth.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- REVIEWS -->
+
+
+<section>
+
+
+<h2>
+Customer Reviews
+</h2>
+
+
+<div class="cards">
+
+
+<div class="review">
+
+<h3 class="gold">
+★★★★★
+</h3>
+
+<p>
+"The most elegant perfume I have ever purchased."
+</p>
+
+<b>
+Arman
+</b>
+
+
+</div>
+
+
+
+<div class="review">
+
+<h3 class="gold">
+★★★★★
+</h3>
+
+<p>
+"Fresh, premium and completely different."
+</p>
+
+<b>
+David
+</b>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- OFFER -->
+
+
+<section id="offer" class="offer">
+
+
+<h2>
+Limited Luxury Offer
+</h2>
+
+
+<div class="price">
+€145
+</div>
+
+
+<p>
+
+Includes:
+<br>
+✔ Homme à la Rose 70ml
+<br>
+✔ Premium packaging
+<br>
+✔ Fast delivery
+
+</p>
+
+
+<div class="timer">
+
+Offer ends in:
+<br>
+
+<span id="count">
+24:00:00
+</span>
+
+
+</div>
+
+
+
+<a href="#" class="btn">
+ORDER NOW
+</a>
+
+
+
+</section>
+
+
+
+
+
+
+<!-- FAQ -->
+
+
+<section class="faq">
+
+
+<h2>
+FAQ
+</h2>
+
+
+<div>
+
+<h3>
+How long does it last?
+</h3>
+
+<p>
+It depends on skin type but creates a lasting impression.
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+Is it suitable for daily use?
+</h3>
+
+<p>
+Yes, it works for everyday and special occasions.
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+Who is it for?
+</h3>
+
+<p>
+For men who love elegance and individuality.
+</p>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<!-- FINAL CTA -->
+
+
+<footer>
+
+
+<h1>
+Your Signature Scent Awaits
+</h1>
+
+
+<p>
+Experience Homme à la Rose today.
+</p>
+
+
+<a href="#offer" class="btn">
+GET YOURS
+</a>
+
+
+</footer>
+
+```
+```html id="9j8r2p"
+<style>
+
+
+/* EXTRA DESIGN */
+
+
+.trust{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+
+background:#111;
+
+text-align:center;
+
+padding:50px 8%;
+
+}
+
+
+.about{
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+}
+
+
+
+.card,
+.review{
+
+background:#111;
+
+border:1px solid #222;
+
+padding:35px;
+
+transition:.4s;
+
+}
+
+
+
+.card:hover,
+.review:hover{
+
+transform:translateY(-10px);
+
+border-color:#d5ad63;
+
+}
+
+
+
+.showcase{
+
+text-align:center;
+
+}
+
+
+
+.showcase img{
+
+width:100%;
+
+max-width:900px;
+
+border-radius:15px;
+
+box-shadow:0 30px 80px #000;
+
+}
+
+
+
+.dark{
+
+background:#050505;
+
+}
+
+
+
+.offer{
+
+text-align:center;
+
+background:
+
+linear-gradient(#000c,#000c),
+
+url("https://cdn.shopify.com/s/files/1/1021/7937/3424/files/3700559609989_HOMME_A_LA_ROSE_EDT_70ML_1.webp?v=1781276182");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+
+
+.price{
+
+font-size:90px;
+
+color:#d5ad63;
+
+font-family:'Cormorant Garamond';
+
+}
+
+
+
+.timer{
+
+font-size:30px;
+
+margin:30px;
+
+color:#d5ad63;
+
+}
+
+
+
+.faq{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+
+
+.faq div{
+
+padding:25px 0;
+
+border-bottom:1px solid #333;
+
+}
+
+
+
+footer{
+
+background:#000;
+
+text-align:center;
+
+padding:100px 20px;
+
+}
+
+
+
+footer h1{
+
+font-size:70px;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+nav ul{
+
+display:none;
+
+}
+
+
+.menu{
+
+display:block;
+
+font-size:25px;
+
+}
+
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding-top:150px;
+
+}
+
+
+.hero h1{
+
+font-size:60px;
+
+}
+
+
+.hero img{
+
+width:280px;
+
+margin-top:40px;
+
+}
+
+
+
+.cards,
+.trust{
+
+grid-template-columns:1fr;
+
+}
+
+
+footer h1{
+
+font-size:45px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+
+
+<script>
+
+
+// COUNTDOWN
+
+
+let seconds = 86400;
+
+
+function timer(){
+
+
+let h=Math.floor(seconds/3600);
+
+let m=Math.floor((seconds%3600)/60);
+
+let s=seconds%60;
+
+
+h=h<10?"0"+h:h;
+
+m=m<10?"0"+m:m;
+
+s=s<10?"0"+s:s;
+
+
+let box=document.getElementById("count");
+
+
+if(box){
+
+box.innerHTML=h+":"+m+":"+s;
+
+}
+
+
+if(seconds>0){
+
+seconds--;
+
+}
+
+
+}
+
+
+setInterval(timer,1000);
+
+timer();
+
+
+
+
+
+
+// MOBILE MENU
+
+
+const menu=document.querySelector(".menu");
+
+const links=document.querySelector("nav ul");
+
+
+if(menu){
+
+
+menu.onclick=function(){
+
+
+if(links.style.display==="flex"){
+
+links.style.display="none";
+
+}
+
+else{
+
+links.style.display="flex";
+
+links.style.flexDirection="column";
+
+links.style.position="absolute";
+
+links.style.right="30px";
+
+links.style.top="80px";
+
+links.style.background="#111";
+
+links.style.padding="25px";
+
+}
+
+
+}
+
+
+}
+
+
+
+
+</script>
+
+
+
 </body>
+
 </html>
